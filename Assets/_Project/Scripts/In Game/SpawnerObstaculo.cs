@@ -26,13 +26,13 @@ public class SpawnerObstaculo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		// currentTime += Time.deltaTime;
+		currentTime += Time.deltaTime;
 
-		// if(currentTime >= spawnTime)
-		// {
-		// 	currentTime = 0;
-		// 	Spawn();
-		// }
+		if(currentTime >= spawnTime)
+		{
+			currentTime = 0;
+			Spawn();
+		}
 	}
 
 	void Spawn()
