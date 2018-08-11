@@ -511,7 +511,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  boostSpeedModifier: 2
   stamina: 100
+  drainStaminaQtd: 0.02
 --- !u!114 &434830403
 MonoBehaviour:
   m_ObjectHideFlags: 0
