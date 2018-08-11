@@ -48,7 +48,7 @@ public class ObjectPool : MonoBehaviour {
 	#endregion
 
 	#region Unity Callbacks
-	void Start()
+	void Awake()
 	{
 		// Initialise the pool
 		_pool = new List<GameObject> ();
