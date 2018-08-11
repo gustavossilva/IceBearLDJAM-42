@@ -15,6 +15,11 @@ public class PlayerController : MonoBehaviour {
 
 	//Motor
 	private PlayerMotor motor;
+	private Vector2 clampPosition = Vector2.zero;
+	private float xMovement = 0;
+	private float yMovement = 0;
+
+	private bool isPressingShift = false;
 
 	void Start ()
 	{
@@ -25,28 +30,44 @@ public class PlayerController : MonoBehaviour {
 	void Update () 
 	{
 		//Ler um comando e adicionar e avisar o personagem que deve se mover
-		float x = Input.GetAxisRaw("Horizontal");
-		float y = Input.GetAxisRaw("Vertical");
-		if(x != 0 || y != 0)
+		xMovement = Input.GetAxisRaw("Horizontal");
+		yMovement = Input.GetAxisRaw("Vertical");
+
+		//Checa e faz o movimento
+		if(xMovement != 0 || yMovement != 0)
 		{
 			//Faz o motor mover o personagem
-			motor.Movement(x,y);
+			motor.Movement(xMovement,yMovement);
+			if(isPressingShift)
+			{
+				motor.Accelerate();
+			}
+		}
+		else
+		{
+			//idle animation
 		}
 
+		//Checa se esta sendo movimento com boost
 		if(Input.GetKey(KeyCode.LeftShift))
 		{
-			motor.Accelerate();
+			if(!isPressingShift)
+			{
+				//Mudar animação
+				isPressingShift = true;
+			}
 		}
 		if(Input.GetKeyUp(KeyCode.LeftShift))
 		{
+			isPressingShift = false;
 			motor.SlowDown();
 		}
 
 		//Limita a posição do personagem na tela
-		Vector2 limitMovement;
-		limitMovement = new Vector2(Mathf.Clamp(transform.position.x,topLeft.position.x,topRight.position.x),
+		clampPosition.Set(Mathf.Clamp(transform.position.x,topLeft.position.x,topRight.position.x),
 									Mathf.Clamp(transform.position.y,bottomLeft.position.y,topLeft.position.y));
-		transform.position = limitMovement;
+
+		transform.position = clampPosition;
 		
 	}
 }

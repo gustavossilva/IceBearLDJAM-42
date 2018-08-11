@@ -12,14 +12,38 @@ public class Obstaculo : MonoBehaviour {
 
 	private float offset = 2f;
 
-	void Awake()
+	public bool wavy;
+	[SerializeField] private float _speed;
+
+    private float index;
+	[SerializeField] float omegaY = 5.0f;
+
+
+	/// <summary> Deve ser setada de acordo com a speed do urso </summary>
+	public float speed
+	{
+		get { return this._speed; }
+		set { this._speed = Mathf.Clamp(value, .5f, int.MaxValue); }
+	}
+
+    void Awake()
 	{
 		rb2D = GetComponent<Rigidbody2D>();
-		SetVelocity(3f);		// 1m/s inicialmente
+		speed = 1f;		// 1m/s inicialmente
 	}
 
 	void FixedUpdate()
 	{
+		// Movimento ondular, pensar em uma forma melhor se sobrar tempo
+		if(wavy)
+		{
+			// -1 a 1
+			float up = -1f + Mathf.PingPong(Time.time, 2f);
+			velocidade = (Vector2.left * speed) + (Vector2.up * up * omegaY);
+		}
+		else
+			velocidade = Vector2.left * speed;
+
 		// Move obstaculo
 		Vector2 newPosition = rb2D.position + (velocidade * Time.deltaTime);	
 		rb2D.MovePosition(newPosition);
@@ -28,15 +52,13 @@ public class Obstaculo : MonoBehaviour {
 			gameObject.SetActive(false);
 	}
 
-
-	// Deve ser setada de acordo com a speed do urso
-	public void SetVelocity(float speedUrso)
-	{
-		velocidade = direcao * speedUrso;
-	}
-
 	private bool EstaForaDaTela()
 	{
 		return transform.position.x < -(CameraUtil.halfScreenWidthInWorldUnits);
+	}
+
+	void OnTriggerEnter2D(Collider2D collider)
+	{
+		// Danifica o urso
 	}
 }
