@@ -13,6 +13,7 @@ public class Tubarao : Enemy {
 
 	public ElipticalMovement elipticalMovement;
 	public bool isFacingLeft = true;
+	private float sign;
 
 
 	protected override void Awake()
@@ -45,7 +46,6 @@ public class Tubarao : Enemy {
 			float y = urso.position.y + elipticalMovement.b * Mathf.Sin(t);
 			pointInEllipsis = new Vector2(x, y);
 
-
 			TurnFace(direcao);
 
 			velocity = direcao * speed;
@@ -55,11 +55,14 @@ public class Tubarao : Enemy {
 			{
 				alcancouUrso = true;
 				elipticalMovement.alpha = t;
+
+				// clokwise or anticlockwise
+				sign = StartRoundingRotation();
 			}
 		}
 		else
 		{
-			elipticalMovement.Move(this, velocidadeRodeio * Time.deltaTime, urso.position.x, urso.position.y);
+			elipticalMovement.Move(this, sign * velocidadeRodeio * Time.deltaTime, urso.position.x, urso.position.y);
 		}
 	}
 
@@ -92,6 +95,33 @@ public class Tubarao : Enemy {
 	{
 		isFacingLeft = !isFacingLeft;
 		transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+	}
+
+	private float StartRoundingRotation()
+	{
+		
+		if(transform.position.y - urso.position.y > 0f)
+		{
+			if(isFacingLeft)
+			{
+				return 1;
+			}
+			else
+			{
+				return -1;
+			}
+		}
+		else
+		{
+			if(isFacingLeft)
+			{
+				return -1;
+			}
+			else
+			{
+				return 1;
+			}
+		}
 	}
 
 	void OnDrawGizmos()
