@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Spine.Unity;
 //Todas as funções q controlam o personagem de alguma maneira
 
 [RequireComponent(typeof(PlayerMotor))]
@@ -23,10 +23,17 @@ public class PlayerController : MonoBehaviour {
 
 	private bool isPressingShift = false;
 
+	bool isMoving = false;
+	bool canDoAnimationAgain = true;
+
 	private AudioSource rowingSFX;
+
+	public SkeletonAnimation _skeletonAnimation;
+	public AnimationReferenceAsset idle,remar;
 
 	void Start ()
 	{
+		_skeletonAnimation.AnimationState.SetAnimation(0,idle,true).mixDuration = 0.5f;
 		motor = GetComponent<PlayerMotor>();
 		rowingSFX = GetComponent<AudioSource>();
 	}
@@ -41,14 +48,20 @@ public class PlayerController : MonoBehaviour {
 		//Checa e faz o movimento
 		if(xMovement != 0 || yMovement != 0)
 		{
+			if(!isMoving && canDoAnimationAgain)
+			{
+				isMoving = true;
+				StartCoroutine(MovementAnimation());
+			}
 			lastDirectionX = xMovement;
 			lastDirectionY = yMovement;
 			//Faz o motor mover o personagem
 			motor.Movement(xMovement,yMovement);
-			if(!rowingSFX.isPlaying)
+
+			/*if(!rowingSFX.isPlaying)
 			{
 				rowingSFX.Play();
-			}
+			}*/
 			if(isPressingShift)
 			{
 				rowingSFX.pitch = 1.4f;
@@ -62,6 +75,7 @@ public class PlayerController : MonoBehaviour {
 		}
 		else
 		{
+			isMoving = false;
 			motor.StopMovement(lastDirectionX,lastDirectionY);
 			//idle animation
 		}
@@ -87,5 +101,19 @@ public class PlayerController : MonoBehaviour {
 
 		transform.position = clampPosition;
 		
+	}
+
+	IEnumerator MovementAnimation()
+	{
+		_skeletonAnimation.AnimationState.AddEmptyAnimation(1,0.5f,0.1f);
+		while(isMoving)
+		{
+			_skeletonAnimation.AnimationState.SetAnimation(1,remar,false).mixDuration = 0.5f;
+			rowingSFX.Play();
+			yield return new WaitForSeconds(rowingSFX.clip.length);
+		}
+		_skeletonAnimation.AnimationState.AddEmptyAnimation(1,0.5f,0.1f);
+		canDoAnimationAgain = true;
+		yield return null;
 	}
 }

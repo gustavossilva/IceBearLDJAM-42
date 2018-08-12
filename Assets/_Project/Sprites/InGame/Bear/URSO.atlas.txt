@@ -1,0 +1,174 @@
+
+URSO.png
+size: 1024,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+braco direito
+  rotate: true
+  xy: 145, 56
+  size: 38, 98
+  orig: 40, 100
+  offset: 1, 1
+  index: -1
+braco esquerdo
+  rotate: false
+  xy: 497, 72
+  size: 81, 54
+  orig: 83, 56
+  offset: 1, 1
+  index: -1
+cabeça
+  rotate: true
+  xy: 410, 71
+  size: 55, 85
+  orig: 57, 87
+  offset: 1, 1
+  index: -1
+corpo
+  rotate: true
+  xy: 2, 10
+  size: 84, 141
+  orig: 86, 143
+  offset: 1, 1
+  index: -1
+costas/braco direito
+  rotate: false
+  xy: 747, 97
+  size: 64, 29
+  orig: 64, 29
+  offset: 0, 0
+  index: -1
+costas/braco esquerdo
+  rotate: false
+  xy: 580, 81
+  size: 54, 45
+  orig: 54, 45
+  offset: 0, 0
+  index: -1
+costas/pe direito
+  rotate: false
+  xy: 873, 91
+  size: 51, 35
+  orig: 51, 35
+  offset: 0, 0
+  index: -1
+costas/pe esquerdo
+  rotate: true
+  xy: 203, 7
+  size: 47, 35
+  orig: 47, 35
+  offset: 0, 0
+  index: -1
+costas/rabo
+  rotate: false
+  xy: 410, 55
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+jam/braco direito
+  rotate: true
+  xy: 145, 11
+  size: 43, 56
+  orig: 43, 56
+  offset: 0, 0
+  index: -1
+jam/braco esquerdo
+  rotate: true
+  xy: 636, 83
+  size: 43, 56
+  orig: 43, 56
+  offset: 0, 0
+  index: -1
+jam/pe direito
+  rotate: false
+  xy: 694, 83
+  size: 51, 43
+  orig: 51, 43
+  offset: 0, 0
+  index: -1
+jam/punho direito
+  rotate: false
+  xy: 747, 62
+  size: 34, 33
+  orig: 34, 33
+  offset: 0, 0
+  index: -1
+jam/punho esquerdo copiar
+  rotate: false
+  xy: 981, 92
+  size: 35, 34
+  orig: 35, 34
+  offset: 0, 0
+  index: -1
+jam/remo
+  rotate: true
+  xy: 251, 62
+  size: 64, 157
+  orig: 64, 157
+  offset: 0, 0
+  index: -1
+nariz
+  rotate: false
+  xy: 783, 84
+  size: 19, 11
+  orig: 21, 13
+  offset: 1, 1
+  index: -1
+olho esquerdo
+  rotate: true
+  xy: 145, 2
+  size: 7, 17
+  orig: 9, 19
+  offset: 1, 1
+  index: -1
+olho esquerdo copiar
+  rotate: true
+  xy: 164, 2
+  size: 7, 17
+  orig: 9, 19
+  offset: 1, 1
+  index: -1
+orelha direita
+  rotate: false
+  xy: 426, 56
+  size: 14, 13
+  orig: 16, 15
+  offset: 1, 1
+  index: -1
+orelha esquerda
+  rotate: false
+  xy: 442, 58
+  size: 11, 11
+  orig: 13, 13
+  offset: 1, 1
+  index: -1
+pe direito
+  rotate: true
+  xy: 813, 94
+  size: 32, 58
+  orig: 34, 60
+  offset: 1, 1
+  index: -1
+pe esquerdo
+  rotate: true
+  xy: 926, 96
+  size: 30, 53
+  orig: 32, 55
+  offset: 1, 1
+  index: -1
+rabo
+  rotate: false
+  xy: 783, 67
+  size: 15, 15
+  orig: 17, 17
+  offset: 1, 1
+  index: -1
+remo copiar
+  rotate: true
+  xy: 2, 96
+  size: 30, 247
+  orig: 32, 249
+  offset: 1, 1
+  index: -1
