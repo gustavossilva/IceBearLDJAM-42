@@ -60,4 +60,4 @@ public class IceController : Singleton<IceController> {
 	}
 
 }
-public enum IcePosition { ICE_TOPLEFT, ICE_TOPRIGHT, ICE_BOTTOMLEFT, ICE_BOTTOMRIGHT, ICE_CENTER }
+public enum IcePosition { ICE_LEFT, ICE_RIGHT, ICE_FRONT, ICE_BACK, ICE_CENTER }
