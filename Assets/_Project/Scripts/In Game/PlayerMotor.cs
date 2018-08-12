@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 //Todas as funções com ligação no motor, ou seja, que tem influência direta na posição/velocidade do personagem
@@ -10,21 +11,38 @@ public class PlayerMotor : MonoBehaviour {
 
 	//Speed variables
 	private float initSpeed;
-	[SerializeField] private float speed = 5f;
+	[SerializeField] private float maxSpeed = 5f;
+	[SerializeField] private float speed = 0;
 	[SerializeField] private float boostSpeedModifier = 2f;
 
 	//Stamina
 	[SerializeField] private float stamina = 100f;
 	[SerializeField] private float drainStaminaQtd = 0.02f;
 
+	private float directionX;
+	private float directionY;
+
+	private bool isMoving = false;
+
 	private void Start() 
 	{
-		initSpeed = speed;
+		initSpeed = maxSpeed;
 	}
 
 	public void Movement(float x, float y)
 	{
+		isMoving = true;
+		StopAllCoroutines();
+		speed += 5 * Time.deltaTime;
+		speed = Mathf.Clamp(speed,0,maxSpeed);
 		transform.position += new Vector3(x,y,0) * (speed * Time.deltaTime);
+	}
+
+	public void StopMovement(float _directionX, float _directionY)
+	{
+		isMoving = false;
+		directionX = _directionX;
+		directionY = _directionY;
 	}
 
 	/// <summary>
@@ -34,7 +52,7 @@ public class PlayerMotor : MonoBehaviour {
 	{
 		if(stamina > 0)
 		{
-			speed = initSpeed * 2;
+			maxSpeed = initSpeed * boostSpeedModifier;
 			stamina -= drainStaminaQtd;
 			stamina = Mathf.Clamp(stamina,0,100);
 
@@ -45,16 +63,22 @@ public class PlayerMotor : MonoBehaviour {
 		}
 		else
 		{
-			SlowDown();
+			maxSpeed = initSpeed;
 		}
 	}
 
-	/// <summary>
-	/// Volta a velocidade do personagem a inicial
-	/// </summary>
-	public void SlowDown()
-	{
-		speed = initSpeed;
+	private void Update() {
+		if(speed != 0 && !isMoving)
+		{
+			speed = Mathf.Lerp(speed,0,2*Time.deltaTime);
+			if(speed < 0.2f)
+			{
+				 speed = 0;
+			}
+			speed = Mathf.Clamp(speed,0,10);
+			transform.position += new Vector3(directionX,directionY,0) * (speed * Time.deltaTime);
+		}
+		
 	}
 
 	/// <summary>
@@ -68,6 +92,16 @@ public class PlayerMotor : MonoBehaviour {
 		{
 			ChangeStamina.Invoke(stamina);
 		}
+	}
+
+	IEnumerator Desacelerate(float direction)
+	{
+		while(speed != 0 && !isMoving)
+		{
+
+			yield return new WaitForSeconds(0.1f);
+		}
+		yield return null;
 	}
 
 

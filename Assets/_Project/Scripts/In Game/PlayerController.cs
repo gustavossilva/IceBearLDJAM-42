@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour {
 	private Vector2 clampPosition = Vector2.zero;
 	private float xMovement = 0;
 	private float yMovement = 0;
+	private float lastDirectionX;
+	private float lastDirectionY;
 
 	private bool isPressingShift = false;
 
@@ -36,15 +38,19 @@ public class PlayerController : MonoBehaviour {
 		//Checa e faz o movimento
 		if(xMovement != 0 || yMovement != 0)
 		{
+			lastDirectionX = xMovement;
+			lastDirectionY = yMovement;
 			//Faz o motor mover o personagem
 			motor.Movement(xMovement,yMovement);
 			if(isPressingShift)
 			{
 				motor.Accelerate();
 			}
+			//Else desalecerate and change speed to 5;
 		}
 		else
 		{
+			motor.StopMovement(lastDirectionX,lastDirectionY);
 			//idle animation
 		}
 
@@ -60,7 +66,6 @@ public class PlayerController : MonoBehaviour {
 		if(Input.GetKeyUp(KeyCode.LeftShift))
 		{
 			isPressingShift = false;
-			motor.SlowDown();
 		}
 
 		//Limita a posição do personagem na tela
