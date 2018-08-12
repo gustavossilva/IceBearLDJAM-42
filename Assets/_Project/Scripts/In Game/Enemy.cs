@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public abstract class Enemy : MonoBehaviour {
 
+    [HideInInspector] public Rigidbody2D rb2D;
 	protected float speed;
-    protected Rigidbody2D rb2D;
     protected Vector2 velocity;
 
     protected virtual void Awake()

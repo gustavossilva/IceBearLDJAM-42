@@ -6,14 +6,14 @@ public class Tubarao : Enemy {
 
 	public Transform urso;
 	private bool alcancouUrso = false;
-	private bool isFacingLeft = true;
 	private float angle;
+	private Vector2 pointInEllipsis;
 
 	[SerializeField] private float velocidadeRodeio;
 
 	public ElipticalMovement elipticalMovement;
+	public bool isFacingLeft = true;
 
-	private Vector2 pointInEllipsis;
 
 	protected override void Awake()
 	{
@@ -59,7 +59,7 @@ public class Tubarao : Enemy {
 		}
 		else
 		{
-			elipticalMovement.Move(velocidadeRodeio * Time.deltaTime, urso.position.x, urso.position.y);
+			elipticalMovement.Move(this, velocidadeRodeio * Time.deltaTime, urso.position.x, urso.position.y);
 		}
 	}
 
@@ -88,7 +88,7 @@ public class Tubarao : Enemy {
 		}
 	}
 
-	private void Flip()
+	public void Flip()
 	{
 		isFacingLeft = !isFacingLeft;
 		transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);

@@ -11,13 +11,20 @@ public class ElipticalMovement : MonoBehaviour {
  
 	float X, Y;
 
- 	public void Move (float velocidadeRodeio, float centerX, float centerY) 
+ 	public void Move (Tubarao tubarao, float velocidadeRodeio, float centerX, float centerY) 
 	{
 		alpha += velocidadeRodeio;
 
 		X = centerX + (a * Mathf.Cos(alpha));
 		Y = centerY + (b * Mathf.Sin(alpha));
 
-		transform.position = new Vector3(X,Y);
+		// Flips image when it reaches the max points of the ellipse
+		if(X - centerX <= -a + 0.1f && tubarao.isFacingLeft)
+			tubarao.Flip();
+		else if(X - centerX >= a - 0.1f && !tubarao.isFacingLeft)
+			tubarao.Flip();
+
+		// Set as the new position
+		tubarao.rb2D.position = new Vector3(X,Y);
  	}
 }
