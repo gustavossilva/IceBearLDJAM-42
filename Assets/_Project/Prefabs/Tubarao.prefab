@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7122b6268ab224f8aafa8e8913e160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb2D: {fileID: 0}
   urso: {fileID: 0}
   velocidadeRodeio: 1
   elipticalMovement: {fileID: 114641692733807902}
