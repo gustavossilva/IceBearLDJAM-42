@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstaculo : MonoBehaviour {
+public class CorrenteFria : MonoBehaviour {
 
-	public int dano;
+	public int recuperacaoOverTime;
 
 	private Vector2 direcao = Vector2.left;
 	private Vector2 velocidade;
 	private Rigidbody2D rb2D;
 
-	private float offset = 2f;
+	private float offset = 3f;
 
 	public bool wavy;
 	[SerializeField] private float _speed;
@@ -57,14 +57,8 @@ public class Obstaculo : MonoBehaviour {
 		return transform.position.x < -(CameraUtil.halfScreenWidthInWorldUnits + offset);
 	}
 
-	void OnTriggerEnter2D(Collider2D collider)
+	void OnTriggerStay2D(Collider2D collider)
 	{
-		print("obstaculo colidiu");
-		IcePosition pos = collider.GetComponent<IceBehaviour>().MyPosition;
-
-		// Danifica a plataforma
-		IceController.Instance.TakeDamageByElement(dano, pos);
-
-		gameObject.SetActive(false);
+		print("energia++");
 	}
 }
