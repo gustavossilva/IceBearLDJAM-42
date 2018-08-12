@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour {
 		}
 		if(Input.GetKeyUp(KeyCode.LeftShift))
 		{
+			motor.StopAcceleration();
 			isPressingShift = false;
 		}
 
