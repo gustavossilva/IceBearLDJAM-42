@@ -17,12 +17,13 @@ public class PlayerMotor : MonoBehaviour {
 
 	//Stamina
 	[SerializeField] private float stamina = 100f;
-	[SerializeField] private float drainStaminaQtd = 0.02f;
+	[SerializeField] private float drainStaminaQtd = 1f;
 
 	private float directionX;
 	private float directionY;
 
 	private bool isMoving = false;
+	private bool wasAccelerate = false;
 
 	private void Start() 
 	{
@@ -61,21 +62,31 @@ public class PlayerMotor : MonoBehaviour {
 				ChangeStamina.Invoke(stamina);
 			}
 		}
-		else
-		{
-			maxSpeed = initSpeed;
-		}
+	}
+
+	public void StopAcceleration()
+	{
+		wasAccelerate = true;
 	}
 
 	private void Update() {
+		if(wasAccelerate)
+		{
+			maxSpeed = Mathf.Lerp(maxSpeed,5,3*Time.deltaTime);
+			if(maxSpeed < 5.1)
+			{
+				maxSpeed = 5;
+				wasAccelerate = false;
+			}
+		}
 		if(speed != 0 && !isMoving)
 		{
-			speed = Mathf.Lerp(speed,0,2*Time.deltaTime);
+			speed = Mathf.Lerp(speed,0,3*Time.deltaTime);
 			if(speed < 0.2f)
 			{
 				 speed = 0;
 			}
-			speed = Mathf.Clamp(speed,0,10);
+			speed = Mathf.Clamp(speed,0,initSpeed * boostSpeedModifier);
 			transform.position += new Vector3(directionX,directionY,0) * (speed * Time.deltaTime);
 		}
 		
@@ -93,16 +104,4 @@ public class PlayerMotor : MonoBehaviour {
 			ChangeStamina.Invoke(stamina);
 		}
 	}
-
-	IEnumerator Desacelerate(float direction)
-	{
-		while(speed != 0 && !isMoving)
-		{
-
-			yield return new WaitForSeconds(0.1f);
-		}
-		yield return null;
-	}
-
-
 }
