@@ -11,7 +11,7 @@ public class IceController : Singleton<IceController> {
 
 	public int coldWaterHeal = 1;
 	public int sunDamage = 1;
-	float timeForNextHit;
+	float timeForNextHit = 1;
 
 	[SerializeField] Collider2D[] iceList;
 
