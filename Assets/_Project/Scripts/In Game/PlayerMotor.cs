@@ -24,7 +24,9 @@ public class PlayerMotor : MonoBehaviour {
 
 	private bool isMoving = false;
 	private bool wasAccelerate = false;
+	
 
+	
 	private void Start() 
 	{
 		initSpeed = maxSpeed;

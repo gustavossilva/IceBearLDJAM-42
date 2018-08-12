@@ -23,9 +23,12 @@ public class PlayerController : MonoBehaviour {
 
 	private bool isPressingShift = false;
 
+	private AudioSource rowingSFX;
+
 	void Start ()
 	{
 		motor = GetComponent<PlayerMotor>();
+		rowingSFX = GetComponent<AudioSource>();
 	}
 	
 	
@@ -42,9 +45,18 @@ public class PlayerController : MonoBehaviour {
 			lastDirectionY = yMovement;
 			//Faz o motor mover o personagem
 			motor.Movement(xMovement,yMovement);
+			if(!rowingSFX.isPlaying)
+			{
+				rowingSFX.Play();
+			}
 			if(isPressingShift)
 			{
+				rowingSFX.pitch = 1.4f;
 				motor.Accelerate();
+			}
+			else
+			{
+				rowingSFX.pitch = 1;
 			}
 			//Else desalecerate and change speed to 5;
 		}
