@@ -8,11 +8,22 @@ public class SpawnerInimigo : MonoBehaviour {
 	private float currentTime;
 	private ObjectPool pool;
 
+	[SerializeField] private Transform maxTransformPos;
+	[SerializeField] private Transform minTransformPos;
+
+	public static Transform urso;
+	private Vector2 minPos;
+	private Vector2 maxPos;
+
 	// Use this for initialization
-	void Start ()
+	void Awake ()
 	{
 		pool = GetComponent<ObjectPool>();
-		currentTime = 0f;	
+		currentTime = 0f;
+		urso = GameObject.Find("urso").transform;	
+
+		minPos = transform.TransformPoint(minTransformPos.position);
+		maxPos = transform.TransformPoint(maxTransformPos.position);
 	}
 	
 	void Update () 
@@ -28,7 +39,13 @@ public class SpawnerInimigo : MonoBehaviour {
 
 	void Spawn()
 	{
-		
+		GameObject obstacleGO = pool.GetPooledObject();
+
+		// Coloca o game object em um local entre maxPos e minPos
+		obstacleGO.transform.position = new Vector2(maxPos.x, Random.Range(minPos.y, maxPos.y));
+
+		// Ativa gameobject
+		obstacleGO.SetActive(true);
 	}
 
 }

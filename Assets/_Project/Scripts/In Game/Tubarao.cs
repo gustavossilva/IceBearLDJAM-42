@@ -14,20 +14,29 @@ public class Tubarao : Enemy {
 	public ElipticalMovement elipticalMovement;
 	public bool isFacingLeft = true;
 	private float sign;
+	private bool doingSurrounding;
 
 
 	protected override void Awake()
 	{
 		speed = 2f;
 
+		urso = SpawnerInimigo.urso;
+
 		// Nothing so far
 		base.Awake();
+	}
+
+	void OnEnable()
+	{
+		alcancouUrso = false;
 	}
 
 	void Update()
 	{
 		if(!alcancouUrso)
 		{
+			doingSurrounding = false;
 			Vector2 direcao = (urso.position - transform.position).normalized;
 
 			angle = MathUtil.GetAngleBasedOnPosition(urso.position, transform.position);
@@ -62,7 +71,12 @@ public class Tubarao : Enemy {
 		}
 		else
 		{
-			elipticalMovement.Move(this, sign * velocidadeRodeio * Time.deltaTime, urso.position.x, urso.position.y);
+			if(!doingSurrounding)
+			{
+				// elipticalMovement.Move(this, sign * velocidadeRodeio, urso.position.x, urso.position.y);
+				StartCoroutine(elipticalMovement.Move(this, sign * velocidadeRodeio));
+				doingSurrounding = true;
+			}
 		}
 	}
 
@@ -126,8 +140,8 @@ public class Tubarao : Enemy {
 
 	void OnDrawGizmos()
 	{
-		Gizmos.color = Color.cyan;
-		Gizmos.DrawLine(urso.position, pointInEllipsis);
-		Gizmos.DrawSphere(pointInEllipsis, .05f);
+		// Gizmos.color = Color.cyan;
+		// Gizmos.DrawLine(urso.position, pointInEllipsis);
+		// Gizmos.DrawSphere(pointInEllipsis, .05f);
 	}
 }
