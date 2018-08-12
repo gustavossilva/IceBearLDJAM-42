@@ -59,6 +59,12 @@ public class Obstaculo : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
-		// Danifica o urso
+		print("obstaculo colidiu");
+		IcePosition pos = collider.GetComponent<IceBehaviour>().MyPosition;
+
+		// Danifica a plataforma
+		IceController.Instance.TakeDamageByElement(dano, pos);
+
+		gameObject.SetActive(false);
 	}
 }
