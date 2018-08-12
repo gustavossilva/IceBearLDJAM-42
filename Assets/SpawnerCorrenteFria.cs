@@ -2,37 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnerInimigo : MonoBehaviour {
-
-	public float spawnTime;
-	private float currentTime;
-	private ObjectPool pool;
+public class SpawnerCorrenteFria : MonoBehaviour {
 
 	[SerializeField] private Transform maxTransformPos;
 	[SerializeField] private Transform minTransformPos;
 
-	public static Transform urso;
+	public float spawnTime;
+	private float currentTime;
+	private ObjectPool pool;
 	private Vector2 minPos;
 	private Vector2 maxPos;
 
+
 	// Use this for initialization
-	void Awake ()
-	{
+	void Start () {
 		pool = GetComponent<ObjectPool>();
-		currentTime = 0f;
-		urso = GameObject.Find("urso").transform;	
 
 		minPos = transform.TransformPoint(minTransformPos.position);
 		maxPos = transform.TransformPoint(maxTransformPos.position);
 	}
-	
-	void Update () 
-	{
+
+	void Update () {
 		currentTime += Time.deltaTime;
 
 		if(currentTime >= spawnTime)
 		{
-			currentTime = 0f;
+			currentTime = 0;
 			Spawn();
 		}
 	}
@@ -47,5 +42,4 @@ public class SpawnerInimigo : MonoBehaviour {
 		// Ativa gameobject
 		obstacleGO.SetActive(true);
 	}
-
 }

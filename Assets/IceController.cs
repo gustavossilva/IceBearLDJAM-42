@@ -34,7 +34,7 @@ public class IceController : Singleton<IceController> {
 		iceScripts = GetComponentsInChildren<IceBehaviour> ();
 	}
 
-	void TakeDamageByElement (int damage, IcePosition position) {
+	public void TakeDamageByElement (int damage, IcePosition position) {
 		iceScripts[(int) position].TakeDamage (damage);
 		//Disparar animação necessária;
 	}
