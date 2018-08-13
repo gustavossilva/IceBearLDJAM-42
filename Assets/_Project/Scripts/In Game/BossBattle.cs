@@ -111,7 +111,7 @@ public class BossBattle : MonoBehaviour {
 				}
 			}
 			if(iceToDamage!=null)
-				IceController.Instance.TakeDamageByElement(-30,iceToDamage.MyPosition);
+				IceController.Instance.TakeDamageByElement(-50,iceToDamage.MyPosition);
 		}
 		if(other.CompareTag("Player") || other.CompareTag("Obstacle"))
 		{
