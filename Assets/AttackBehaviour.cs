@@ -18,6 +18,8 @@ public class AttackBehaviour : MonoBehaviour {
 
 	void Update()
 	{
+		if(Time.timeScale == 0)
+			return;
 		if(Input.GetKeyDown(KeyCode.RightArrow) && trackClear)
 		{
 			PlayerManager.Instance.attacking = true;
