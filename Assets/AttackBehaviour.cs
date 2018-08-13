@@ -38,7 +38,6 @@ public class AttackBehaviour : MonoBehaviour {
 			trackEntry = _skeletonAnimation.state.SetAnimation(2, attack_right, false);
 			// trackEntry.End += OnEnd;
 			icePosition = IcePosition.ICE_LEFT;
-			trackEntry.Complete += OnComplete;
 			trackEntry = _skeletonAnimation.state.AddEmptyAnimation(2, 0.2f, _skeletonAnimation.state.GetCurrent(2).AnimationTime+1f);
 			trackEntry.Complete += OnLeftComplete;
 		}
@@ -97,5 +96,17 @@ public class AttackBehaviour : MonoBehaviour {
 	void OnLeftComplete(Spine.TrackEntry e)
 	{
 		_skeletonAnimation.transform.localScale = new Vector2(1f, transform.localScale.y);
+
+		trackClear = true;
+		
+		Tubarao tubarao = null;
+
+		// Kill shark if there is one
+		if(SpawnerInimigo.dic.TryGetValue(icePosition, out tubarao))
+		{
+			tubarao.isAlive = false;
+			SpawnerInimigo.dic.Remove(icePosition);
+		}
+		PlayerManager.Instance.attacking = false;
 	}
 }
