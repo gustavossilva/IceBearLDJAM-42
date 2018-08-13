@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class menu : MonoBehaviour
 {
 
+    public GameObject menuMusic;
     public GameObject tutorial;
+
 
     private void Start() 
     {
@@ -17,9 +19,10 @@ public class menu : MonoBehaviour
             tutorial.SetActive(true);
         }
     }
-    
+
     public void ChamaCena(string nome)
     {
+        DontDestroyOnLoad(menuMusic);
         SceneManager.LoadScene(nome);
 
     }
