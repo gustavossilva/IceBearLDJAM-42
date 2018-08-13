@@ -63,7 +63,7 @@ public class Obstaculo : MonoBehaviour {
 			IcePosition pos = collider.GetComponent<IceBehaviour>().MyPosition;
 
 			// Danifica a plataforma
-			IceController.Instance.TakeDamageByElement(dano, pos);
+			IceController.Instance.TakeDamageByElement(-dano, pos);
 
 			gameObject.SetActive(false);
 		}
