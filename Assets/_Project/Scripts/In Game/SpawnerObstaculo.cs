@@ -12,6 +12,8 @@ public class SpawnerObstaculo : MonoBehaviour {
 	private Vector2 minPos;
 	private Vector2 maxPos;
 
+	[SerializeField] private ParticleSystem ps;
+	private bool startSnow = false;
 
 	// Use this for initialization
 	void Start () {
@@ -28,10 +30,19 @@ public class SpawnerObstaculo : MonoBehaviour {
 	void Update () {
 		currentTime += Time.deltaTime;
 
-		if(currentTime >= spawnTime)
+		if(currentTime >= spawnTime && GameManager.Instance.map < 5)
 		{
 			currentTime = 0;
 			Spawn();
+		}
+
+		if(GameManager.Instance.map == 5)
+		{
+			if(!startSnow)
+			{
+				startSnow = true;
+				ps.Play();
+			}
 		}
 	}
 

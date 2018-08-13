@@ -127,15 +127,22 @@ public class ElipticalMovement : MonoBehaviour {
 				if(currentChewingTime > 1)
 				{
 					currentChewingTime = 0f;
-					IceController.Instance.TakeDamageByElement(-tubarao.damagePerSecond, position);
 
+					if(ice != null)
+					{
+						IceController.Instance.TakeDamageByElement(-tubarao.damagePerSecond, position);
+					}
 					// plataforma destruida
-					if(ice.Life <= 2)
+					else
 					{
 						tubarao.isAlive = false;
 						SpawnerInimigo.dic.Remove(position);
 						break;
 					}
+					// if(ice.Life <= 2)
+					// {
+						
+					// }
 				}
 
 				yield return null;

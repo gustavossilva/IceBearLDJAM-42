@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8de5bd0b44eb814a9327661a4a0bcd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dano: 5
+  dano: 100
   wavy: 0
   _speed: 1
   omegaY: 1
