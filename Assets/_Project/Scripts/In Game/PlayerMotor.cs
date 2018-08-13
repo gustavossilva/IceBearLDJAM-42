@@ -34,6 +34,11 @@ public class PlayerMotor : MonoBehaviour {
 		initSpeed = maxSpeed;
 	}
 
+	/// <summary>
+	/// Do a movement based on the x and y values
+	/// </summary>
+	/// <param name="x">transform.position.x + x</param>
+	/// <param name="y">transform.position.y + y</param>
 	public void Movement(float x, float y)
 	{
 		isMoving = true;
@@ -43,6 +48,7 @@ public class PlayerMotor : MonoBehaviour {
 		transform.position += new Vector3(x,y,0) * (speed * Time.deltaTime);
 	}
 
+	//Diz para parar o movimento e mostra qual direção deve deslizar
 	public void StopMovement(float _directionX, float _directionY)
 	{
 		isMoving = false;
@@ -75,6 +81,8 @@ public class PlayerMotor : MonoBehaviour {
 
 	private void Update() 
 	{
+		//Neste caso o update é utilizado para reduzir a velocidade somente
+		
 		if(wasAccelerate)
 		{
 			maxSpeed = Mathf.Lerp(maxSpeed,5,3*Time.deltaTime);

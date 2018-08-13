@@ -7,6 +7,8 @@ public class GameManager : Singleton<GameManager> {
 	public bool gameOver = false;
 	public bool isBossAlive = true;
 
+	public int map;
+
 	protected override void Awake() 
 	{
 		IsPersistentBetweenScenes = false;
