@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager> {
 
@@ -29,6 +30,11 @@ public class GameManager : Singleton<GameManager> {
 		{
 			topleft.position = new Vector2(-8f,topleft.position.y);
 			bottomLeft.position = new Vector2(-8f,bottomLeft.position.y);			
+		}
+
+		if(gameOver)
+		{
+			SceneManager.LoadScene("SceneMenu");
 		}
 	}
 }

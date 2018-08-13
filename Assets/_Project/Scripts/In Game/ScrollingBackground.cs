@@ -10,6 +10,8 @@ public class ScrollingBackground : MonoBehaviour {
 	private int lastMap = 5;
 	private float speed = 5f;
 
+	private float finalTimer = 0f;
+
 	// Use this for initialization
 	void Start () {
 		//0 - -38.4 em 60s (1 minuto por fase)
@@ -47,6 +49,11 @@ public class ScrollingBackground : MonoBehaviour {
 		if(transform.position.x < -173.2) //(-38.4f * (lastMap-1) - 20.6f)
 		{
 			speed = 0;
+			finalTimer += Time.deltaTime;
+		}
+		if(finalTimer > 4)
+		{
+			GameManager.Instance.gameOver = true;
 		}
 	}
 }
