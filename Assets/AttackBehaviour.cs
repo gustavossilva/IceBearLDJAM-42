@@ -4,7 +4,7 @@ using Spine.Unity;
 public class AttackBehaviour : MonoBehaviour {
 
 	public SkeletonAnimation _skeletonAnimation;
-	public AnimationReferenceAsset attack_front, attack_right, attack_back, idle;
+	public AnimationReferenceAsset attack_front, attack_right, attack_back;
 
 	public Spine.TrackEntry trackEntry;
 	public bool trackClear = true;
@@ -22,17 +22,17 @@ public class AttackBehaviour : MonoBehaviour {
 			trackEntry = _skeletonAnimation.state.SetAnimation(2, attack_right, false);
 			// trackEntry.End += OnEnd;
 			trackEntry.Complete += OnComplete;
-			_skeletonAnimation.state.AddEmptyAnimation(0, 0, .6f);
+			_skeletonAnimation.state.AddEmptyAnimation(0, .3f, .6f);
 		}
 
 		if(Input.GetKeyDown(KeyCode.LeftArrow) && trackClear)
 		{
 			trackClear = false;
-			transform.localScale = new Vector2(-1f, transform.localScale.y);
+			_skeletonAnimation.transform.localScale = new Vector2(-1f, transform.localScale.y);
 			trackEntry = _skeletonAnimation.state.SetAnimation(2, attack_right, false);
 			// trackEntry.End += OnEnd;
 			trackEntry.Complete += OnComplete;
-			_skeletonAnimation.state.AddEmptyAnimation(0, 0, .6f);
+			_skeletonAnimation.state.AddEmptyAnimation(0, .3f, .6f);
 		}
 
 		if(Input.GetKeyDown(KeyCode.UpArrow) && trackClear)
@@ -41,7 +41,7 @@ public class AttackBehaviour : MonoBehaviour {
 			trackEntry = _skeletonAnimation.state.SetAnimation(2, attack_back, false);
 			// trackEntry.End += OnEnd;
 			trackEntry.Complete += OnComplete;
-			_skeletonAnimation.state.AddEmptyAnimation(0, 0, .6f);
+			_skeletonAnimation.state.AddEmptyAnimation(0, .3f, .6f);
 		}
 
 		if(Input.GetKeyDown(KeyCode.DownArrow) && trackClear)
@@ -50,7 +50,7 @@ public class AttackBehaviour : MonoBehaviour {
 			trackEntry = _skeletonAnimation.state.SetAnimation(2, attack_front, false);
 			// trackEntry.End += OnEnd;
 			trackEntry.Complete += OnComplete;
-			_skeletonAnimation.state.AddEmptyAnimation(0, 0, .6f);
+			_skeletonAnimation.state.AddEmptyAnimation(0, .3f, .6f);
 		}
 	
 		
@@ -65,8 +65,8 @@ public class AttackBehaviour : MonoBehaviour {
 
 	void OnComplete(Spine.TrackEntry e)
 	{
-		print("Animation complete");
-		transform.localScale = new Vector2(1f, transform.localScale.y);
+		// print("Animation complete");
+		_skeletonAnimation.transform.localScale = new Vector2(1f, transform.localScale.y);
 		trackClear = true;
 		
 		// Kill shark if there is one

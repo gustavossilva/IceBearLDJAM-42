@@ -20,7 +20,7 @@ public class SpawnerInimigo : MonoBehaviour {
 	{
 		pool = GetComponent<ObjectPool>();
 		currentTime = 0f;
-		urso = GameObject.Find("urso").transform;	
+		urso = GameObject.Find("Spine GameObject (URSO)").transform;	
 
 		minPos = transform.TransformPoint(minTransformPos.position);
 		maxPos = transform.TransformPoint(maxTransformPos.position);
@@ -36,6 +36,8 @@ public class SpawnerInimigo : MonoBehaviour {
 			Spawn();
 
 			// fazer com que quando o inimigo morrer, ele avisar q morreu pro spawner spawnar outro inimigo, depois de um delay aleatorio
+		
+			
 		}
 	}
 

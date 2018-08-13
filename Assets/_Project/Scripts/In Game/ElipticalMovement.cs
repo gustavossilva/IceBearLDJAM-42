@@ -95,23 +95,23 @@ public class ElipticalMovement : MonoBehaviour {
 			children[i].SetActive(false);
 		}
 
-		// IcePosition position = tubarao.Attack();
+		IcePosition position = tubarao.Attack();
 
-		// float currentChewingTime = 0f;
+		float currentChewingTime = 0f;
 
-		// while(currentChewingTime <= tubarao.chewingTime)
-		// {
-		// 	currentChewingTime += Time.deltaTime;
-		// 	// Apply damage to the platform
-		// 	IceController.Instance.TakeDamageByElement(tubarao.damagePerSecond * (int)currentChewingTime, position);
-		// 	yield return null;
-		// }
+		while(currentChewingTime <= tubarao.chewingTime)
+		{
+			currentChewingTime += Time.deltaTime;
+			// Apply damage to the platform
+			IceController.Instance.TakeDamageByElement(tubarao.damagePerSecond * (int)currentChewingTime, position);
+			yield return null;
+		}
 
-		// // If the player has not killed the shark yet, e.g. it is still alive
-		// if(tubarao.isAlive)
-		// {
-		// 	IceController.Instance.StopSharkAnim(position);
-		// 	gameObject.SetActive(true);
-		// }
+		// If the player has not killed the shark yet, e.g. it is still alive
+		if(tubarao.isAlive)
+		{
+			IceController.Instance.StopSharkAnim(position);
+			gameObject.SetActive(false);
+		}
  	}
 }
