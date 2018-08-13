@@ -57,7 +57,7 @@ public class Obstaculo : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
-		if(collider.CompareTag("Urso"))
+		if(collider.CompareTag("Player"))
 		{
 			print("obstaculo colidiu");
 			IcePosition pos = collider.GetComponent<IceBehaviour>().MyPosition;
