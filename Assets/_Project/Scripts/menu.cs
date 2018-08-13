@@ -4,27 +4,18 @@ using UnityEngine;
 
 using UnityEngine.SceneManagement;
 
-
-
-
 public class menu : MonoBehaviour
 {
-
-	// Use this for initialization
-	void Start ()
-    {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
-         public void chamaCena(string nome)
+    public void ChamaCena(string nome)
     {
         SceneManager.LoadScene(nome);
 
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Jogo Fechado! ");
+		Application.Quit();
     }
 }
 
