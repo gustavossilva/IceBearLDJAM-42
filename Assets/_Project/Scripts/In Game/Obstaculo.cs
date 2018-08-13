@@ -29,13 +29,7 @@ public class Obstaculo : MonoBehaviour {
 		rb2D = GetComponent<Rigidbody2D>();
 		speed = 1f;		// 1m/s inicialmente
 	}
-	/// <summary>
-	/// This function is called when the object becomes enabled and active.
-	/// </summary>
-	void OnEnable()
-	{
-		GetComponent<Collider2D>().enabled = true;
-	}
+
 
 	void FixedUpdate()
 	{
@@ -71,7 +65,8 @@ public class Obstaculo : MonoBehaviour {
 
 			// Danifica a plataforma
 			IceController.Instance.TakeDamageByElement(-dano, pos);
-			StartCoroutine(IceController.Instance.StartImmortality(this.gameObject));
+			IceController.Instance.ImmortalFunction();
+			gameObject.SetActive(false);
 		}
 	}
 }
