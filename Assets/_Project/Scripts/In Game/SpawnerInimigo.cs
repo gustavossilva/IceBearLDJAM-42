@@ -34,6 +34,8 @@ public class SpawnerInimigo : MonoBehaviour {
 		{
 			currentTime = 0f;
 			Spawn();
+
+			// fazer com que quando o inimigo morrer, ele avisar q morreu pro spawner spawnar outro inimigo, depois de um delay aleatorio
 		}
 	}
 
