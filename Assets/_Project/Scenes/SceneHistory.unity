@@ -219,8 +219,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.7500124, y: -71.66}
-  m_SizeDelta: {x: 348.36, y: 54.4}
+  m_AnchoredPosition: {x: 3.3513, y: -215}
+  m_SizeDelta: {x: 1025.1, y: 162.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &263635437
 MonoBehaviour:
@@ -243,7 +243,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7f981eb3c400ea34592a65437692a8b8, type: 3}
-    m_FontSize: 10
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -379,8 +379,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.7500124, y: -71.66}
-  m_SizeDelta: {x: 348.36, y: 54.4}
+  m_AnchoredPosition: {x: 3.3464, y: -215.00003}
+  m_SizeDelta: {x: 1025.1, y: 162.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &394614787
 MonoBehaviour:
@@ -403,7 +403,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7f981eb3c400ea34592a65437692a8b8, type: 3}
-    m_FontSize: 9
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -416,7 +416,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "A long long time has passed and he woke up dizzy and scared, too far away
     from home. When he recovered from the shock, he thinks:\r\n\r\n\"I need to go
-    back to my son\"\r\n\r\nAnd that's how your adventure begins.\r                                PRESS
+    back to my son\"\r\n\r\nAnd that's how your adventure begins.\r                                \t\t\t\tPRESS
     ENTER TO CONTINUE\n"
 --- !u!222 &394614788
 CanvasRenderer:
@@ -456,8 +456,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.7500124, y: -71.66}
-  m_SizeDelta: {x: 348.36, y: 54.4}
+  m_AnchoredPosition: {x: 3.3513, y: -215}
+  m_SizeDelta: {x: 1025.1, y: 162.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &399662180
 MonoBehaviour:
@@ -480,7 +480,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7f981eb3c400ea34592a65437692a8b8, type: 3}
-    m_FontSize: 10
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -531,8 +531,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.7500124, y: -71.66}
-  m_SizeDelta: {x: 348.36, y: 54.4}
+  m_AnchoredPosition: {x: 6.7, y: -215}
+  m_SizeDelta: {x: 1031.8, y: 162.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &520276482
 MonoBehaviour:
@@ -555,7 +555,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7f981eb3c400ea34592a65437692a8b8, type: 3}
-    m_FontSize: 10
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -698,10 +698,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -928,8 +928,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.7500124, y: -71.66}
-  m_SizeDelta: {x: 348.36, y: 54.4}
+  m_AnchoredPosition: {x: 3.3488, y: -215.00003}
+  m_SizeDelta: {x: 1025.1, y: 162.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &844022517
 MonoBehaviour:
@@ -952,7 +952,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7f981eb3c400ea34592a65437692a8b8, type: 3}
-    m_FontSize: 10
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1002,8 +1002,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.7500124, y: -71.66}
-  m_SizeDelta: {x: 348.36, y: 54.4}
+  m_AnchoredPosition: {x: 3.3512, y: -215}
+  m_SizeDelta: {x: 1025.1, y: 162.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1064853837
 MonoBehaviour:
@@ -1026,7 +1026,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7f981eb3c400ea34592a65437692a8b8, type: 3}
-    m_FontSize: 10
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1239,8 +1239,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.000012398, y: 111.8}
-  m_SizeDelta: {x: 397.7, y: 223.6}
+  m_AnchoredPosition: {x: 0.000030518, y: 329.9}
+  m_SizeDelta: {x: 1167.6, y: 659.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1120281330
 MonoBehaviour:
@@ -1307,8 +1307,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.7500124, y: -71.66}
-  m_SizeDelta: {x: 348.36, y: 54.4}
+  m_AnchoredPosition: {x: 6.7, y: -215}
+  m_SizeDelta: {x: 1031.8, y: 162.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1122327045
 MonoBehaviour:
@@ -1331,7 +1331,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7f981eb3c400ea34592a65437692a8b8, type: 3}
-    m_FontSize: 9
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1389,8 +1389,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -115.3}
-  m_SizeDelta: {x: 397.7, y: 223.59998}
+  m_AnchoredPosition: {x: 0.000022888, y: -350}
+  m_SizeDelta: {x: 1112.3, y: 630.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1163757846
 MonoBehaviour:
@@ -1667,8 +1667,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.7500124, y: -71.66}
-  m_SizeDelta: {x: 348.36, y: 54.4}
+  m_AnchoredPosition: {x: 3.3475, y: -215.00006}
+  m_SizeDelta: {x: 1025.1, y: 162.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1651072384
 MonoBehaviour:
@@ -1691,7 +1691,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7f981eb3c400ea34592a65437692a8b8, type: 3}
-    m_FontSize: 10
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1952,7 +1952,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1986007678
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1968,8 +1968,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9.3, y: -70.8}
-  m_SizeDelta: {x: 360.03, y: 13.57}
+  m_AnchoredPosition: {x: 8.4, y: -195.8}
+  m_SizeDelta: {x: 961.2, y: 81.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1986007679
 MonoBehaviour:
@@ -1992,18 +1992,19 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7f981eb3c400ea34592a65437692a8b8, type: 3}
-    m_FontSize: 11
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Please, payer, help the bear father get to his puppy, you are his only hope.
+  m_Text: Please, player, help the bear father get to his puppy, you are his only
+    hope.
 --- !u!222 &1986007680
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2042,8 +2043,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.7500124, y: -71.66}
-  m_SizeDelta: {x: 348.36, y: 54.4}
+  m_AnchoredPosition: {x: 6.7026, y: -215.00002}
+  m_SizeDelta: {x: 1031.8, y: 162.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2078635279
 MonoBehaviour:
@@ -2066,7 +2067,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7f981eb3c400ea34592a65437692a8b8, type: 3}
-    m_FontSize: 10
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -2121,8 +2122,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.7500124, y: -71.66}
-  m_SizeDelta: {x: 348.36, y: 54.4}
+  m_AnchoredPosition: {x: 3.3488, y: -215.00003}
+  m_SizeDelta: {x: 1025.1, y: 162.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2084345889
 MonoBehaviour:
@@ -2145,7 +2146,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7f981eb3c400ea34592a65437692a8b8, type: 3}
-    m_FontSize: 10
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
