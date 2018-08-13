@@ -42,28 +42,32 @@ public class IceController : Singleton<IceController> {
 	}
 
 	public void StartSharkAnim (IcePosition pos) {
-		iceScripts[(int) pos].StartSharkAnimation ();
+		if (iceScripts[(int) pos] != null)
+			iceScripts[(int) pos].StartSharkAnimation ();
 	}
 	public void StopSharkAnim (IcePosition pos) {
-		iceScripts[(int) pos].StopSharkAnimation ();
+		if (iceScripts[(int) pos] != null)
+			iceScripts[(int) pos].StopSharkAnimation ();
 	}
 	private void Update () {
 		if (iceScripts[(int) IcePosition.ICE_CENTER] == null)
 			GameManager.Instance.gameOver = true;
 	}
 
-	public IEnumerator StartImmortality (GameObject hitter) {
+	public void ImmortalFunction () {
+		StartCoroutine (StartImmortality ());
+	}
+
+	public IEnumerator StartImmortality () {
 		float timeToFinish = 0;
 		canHit = false;
 		ChangeIceCollidersState ();
 		//Dispara animação de hit
 		//Active hit Animation and Imortal Animation
-		Collider2D hitterCollider = hitter.GetComponent<Collider2D> ();
-		hitterCollider.enabled = !hitterCollider.enabled;
 		yield return new WaitForSeconds (timeForNextHit);
 		ChangeIceCollidersState ();
 		canHit = true;
-		hitter.SetActive (false);
+
 	}
 
 	//Função responsável por desabilitar e habilitar os colisores dos gelos

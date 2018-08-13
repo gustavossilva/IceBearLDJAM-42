@@ -14,7 +14,7 @@ public class Obstaculo : MonoBehaviour {
 	[SerializeField] private float _speed;
 
     private float index;
-	[SerializeField] float omegaY = 5.0f;
+	float omegaY;
 
 
 	/// <summary> Deve ser setada de acordo com a speed do urso </summary>
@@ -29,11 +29,11 @@ public class Obstaculo : MonoBehaviour {
 		rb2D = GetComponent<Rigidbody2D>();
 		speed = 1f;		// 1m/s inicialmente
 	}
-	/// <summary>
-	/// This function is called when the object becomes enabled and active.
-	/// </summary>
+
+
 	void OnEnable()
 	{
+		omegaY = Random.Range(.05f, 1.5f);
 		GetComponent<Collider2D>().enabled = true;
 	}
 
@@ -64,14 +64,15 @@ public class Obstaculo : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
-		if(collider.CompareTag("Player") && IceController.Instance.canHit)
+		if(collider.CompareTag("Player"))
 		{
 			print("obstaculo colidiu");
 			IcePosition pos = collider.GetComponent<IceBehaviour>().MyPosition;
 
 			// Danifica a plataforma
 			IceController.Instance.TakeDamageByElement(-dano, pos);
-			StartCoroutine(IceController.Instance.StartImmortality(this.gameObject));
+			IceController.Instance.ImmortalFunction();
+			gameObject.SetActive(false);
 		}
 	}
 }
