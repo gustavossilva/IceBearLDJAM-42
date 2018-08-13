@@ -5,8 +5,6 @@ using UnityEngine;
 public class Obstaculo : MonoBehaviour {
 
 	public int dano;
-
-	private Vector2 direcao = Vector2.left;
 	private Vector2 velocidade;
 	private Rigidbody2D rb2D;
 
@@ -59,12 +57,15 @@ public class Obstaculo : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
-		print("obstaculo colidiu");
-		IcePosition pos = collider.GetComponent<IceBehaviour>().MyPosition;
+		if(collider.CompareTag("Urso"))
+		{
+			print("obstaculo colidiu");
+			IcePosition pos = collider.GetComponent<IceBehaviour>().MyPosition;
 
-		// Danifica a plataforma
-		IceController.Instance.TakeDamageByElement(dano, pos);
+			// Danifica a plataforma
+			IceController.Instance.TakeDamageByElement(dano, pos);
 
-		gameObject.SetActive(false);
+			gameObject.SetActive(false);
+		}
 	}
 }
