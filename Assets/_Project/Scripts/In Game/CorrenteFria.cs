@@ -57,19 +57,19 @@ public class CorrenteFria : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D collider)
 	{
-		if(collider.CompareTag("someTag"))
+		if(collider.CompareTag("Player"))
 		{
 			IceController.Instance.coldWater = true;
-			print("energia++");
+			// print("energia++");
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D collider)
 	{
-		if(collider.CompareTag("someTag"))
+		if(collider.CompareTag("Player"))
 		{
 			IceController.Instance.coldWater = false;
-			print("energia--");
+			// print("energia--");
 		}
 	}
 }

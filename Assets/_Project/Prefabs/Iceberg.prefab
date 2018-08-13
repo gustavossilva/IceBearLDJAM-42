@@ -170,10 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8de5bd0b44eb814a9327661a4a0bcd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dano: 100
-  wavy: 0
+  dano: 10
+  wavy: 1
   _speed: 1
-  omegaY: 1
 --- !u!212 &212141811187332286
 SpriteRenderer:
   m_ObjectHideFlags: 1
