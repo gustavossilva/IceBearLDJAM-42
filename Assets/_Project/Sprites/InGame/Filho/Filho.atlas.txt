@@ -1,0 +1,118 @@
+
+Filho.png
+size: 512,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+boca
+  rotate: false
+  xy: 218, 20
+  size: 5, 4
+  orig: 7, 6
+  offset: 1, 1
+  index: -1
+boca feliz
+  rotate: false
+  xy: 447, 96
+  size: 13, 14
+  orig: 15, 16
+  offset: 1, 1
+  index: -1
+braco direito
+  rotate: false
+  xy: 336, 47
+  size: 38, 72
+  orig: 40, 74
+  offset: 1, 1
+  index: -1
+braco esquedo
+  rotate: false
+  xy: 281, 55
+  size: 53, 64
+  orig: 55, 66
+  offset: 1, 1
+  index: -1
+cabeca
+  rotate: false
+  xy: 218, 50
+  size: 61, 69
+  orig: 63, 71
+  offset: 1, 1
+  index: -1
+corda
+  rotate: true
+  xy: 218, 121
+  size: 3, 172
+  orig: 5, 174
+  offset: 1, 1
+  index: -1
+corpo
+  rotate: false
+  xy: 136, 18
+  size: 80, 106
+  orig: 82, 108
+  offset: 1, 1
+  index: -1
+nariz
+  rotate: false
+  xy: 477, 115
+  size: 13, 9
+  orig: 15, 11
+  offset: 1, 1
+  index: -1
+olhos
+  rotate: false
+  xy: 447, 112
+  size: 28, 12
+  orig: 30, 14
+  offset: 1, 1
+  index: -1
+olhos felizes
+  rotate: false
+  xy: 376, 65
+  size: 28, 13
+  orig: 30, 15
+  offset: 1, 1
+  index: -1
+orelhas
+  rotate: false
+  xy: 218, 26
+  size: 51, 22
+  orig: 53, 24
+  offset: 1, 1
+  index: -1
+pe direito
+  rotate: false
+  xy: 376, 80
+  size: 33, 39
+  orig: 35, 41
+  offset: 1, 1
+  index: -1
+pe esquerdo
+  rotate: false
+  xy: 411, 85
+  size: 34, 39
+  orig: 36, 41
+  offset: 1, 1
+  index: -1
+sobrancelha
+  rotate: false
+  xy: 376, 55
+  size: 25, 8
+  orig: 27, 10
+  offset: 1, 1
+  index: -1
+sobrancelha feliz
+  rotate: false
+  xy: 2, 2
+  size: 26, 9
+  orig: 28, 11
+  offset: 1, 1
+  index: -1
+varinha
+  rotate: false
+  xy: 2, 13
+  size: 132, 111
+  orig: 134, 113
+  offset: 1, 1
+  index: -1

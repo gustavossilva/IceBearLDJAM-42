@@ -48,6 +48,8 @@ public class ScrollingBackground : MonoBehaviour {
 		}
 		if(transform.position.x < -173.2) //(-38.4f * (lastMap-1) - 20.6f)
 		{
+			GameManager.Instance.winner = true;
+			GameManager.Instance.UpdateFilhoAnimation();
 			speed = 0;
 			finalTimer += Time.deltaTime;
 		}

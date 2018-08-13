@@ -1876,6 +1876,109 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 734088544}
+--- !u!1 &787475102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 787475106}
+  - component: {fileID: 787475105}
+  - component: {fileID: 787475104}
+  - component: {fileID: 787475103}
+  m_Layer: 0
+  m_Name: Spine GameObject (Filho)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &787475103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 787475102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonDataAsset: {fileID: 11400000, guid: c59776352a35e594f858accd631b9aa7, type: 2}
+  initialSkinName: default
+  initialFlipX: 0
+  initialFlipY: 0
+  separatorSlotNames: []
+  zSpacing: 0
+  useClipping: 1
+  immutableTriangles: 0
+  pmaVertexColors: 1
+  clearStateOnDisable: 0
+  tintBlack: 0
+  singleSubmesh: 0
+  addNormals: 0
+  calculateTangents: 0
+  logErrors: 0
+  disableRenderingOnOverride: 1
+  _animationName: Triste
+  loop: 1
+  timeScale: 1
+--- !u!23 &787475104
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 787475102}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 44f5b5f02ad1f7849bfb0ce8fd458cc0, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1309842811
+  m_SortingLayer: 5
+  m_SortingOrder: 0
+--- !u!33 &787475105
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 787475102}
+  m_Mesh: {fileID: 0}
+--- !u!4 &787475106
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 787475102}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 174.98, y: -1.16, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 981706085}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &809774039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,6 +2997,7 @@ Transform:
   - {fileID: 1784780692}
   - {fileID: 2015695711}
   - {fileID: 809774040}
+  - {fileID: 787475106}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3133,6 +3237,28 @@ Prefab:
       propertyPath: rodAnimation
       value: 
       objectReference: {fileID: 1954983661}
+    - target: {fileID: 114155419887681032, guid: 732ad2d6cb52d264f891a1412c05fe80,
+        type: 2}
+      propertyPath: fisgada
+      value: 
+      objectReference: {fileID: 11400000, guid: 7cc8eebe19ca7d244964fb0bc75e2ea3,
+        type: 2}
+    - target: {fileID: 114155419887681032, guid: 732ad2d6cb52d264f891a1412c05fe80,
+        type: 2}
+      propertyPath: perder_peixe
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d6340b0d4521814f93686055088335c,
+        type: 2}
+    - target: {fileID: 114155419887681032, guid: 732ad2d6cb52d264f891a1412c05fe80,
+        type: 2}
+      propertyPath: pescar
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b480a6acb12893428b804048bbfd0ac,
+        type: 2}
+    - target: {fileID: 1366563951254334, guid: 732ad2d6cb52d264f891a1412c05fe80, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 732ad2d6cb52d264f891a1412c05fe80, type: 2}
   m_IsPrefabParent: 0
@@ -4169,7 +4295,6 @@ GameObject:
   - component: {fileID: 1639873814}
   - component: {fileID: 1639873813}
   - component: {fileID: 1639873816}
-  - component: {fileID: 1639873817}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -4250,22 +4375,9 @@ MonoBehaviour:
   topleft: {fileID: 603980154}
   bottomLeft: {fileID: 2042423156}
   map: 0
---- !u!114 &1639873817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1639873812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4824b0d0c636dc40ad5f1d22a457525, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _timeToMaxHookChance: 49
-  _currentTimeWithoutFish: 0
-  _timeWithFish: 0
-  _probabilityToCatch: 1
-  rodAnimation: {fileID: 0}
+  filhoAnimation: {fileID: 787475103}
+  filhoFeliz: {fileID: 11400000, guid: e4bbc661c2776e442930b6b318a6b768, type: 2}
+  filhoTriste: {fileID: 11400000, guid: ab990ab5a8d48a3408630238fb55640a, type: 2}
 --- !u!1 &1689852458
 GameObject:
   m_ObjectHideFlags: 0
@@ -5070,6 +5182,7 @@ MonoBehaviour:
   _skeletonAnimation: {fileID: 542241989}
   idle: {fileID: 11400000, guid: f30cd76d2571ce44d8bcbb0ee9eff3f0, type: 2}
   remar: {fileID: 11400000, guid: 2efec0151d5579b4a8a0433a922e4636, type: 2}
+  morrer: {fileID: 11400000, guid: 3eace965ac8c1c049a4f2042b9584d85, type: 2}
 --- !u!4 &1920283238
 Transform:
   m_ObjectHideFlags: 0

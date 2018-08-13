@@ -30,11 +30,13 @@ public class PlayerController : MonoBehaviour {
 	bool isMoving = false;
 	bool canDoAnimationAgain = true;
 	public SkeletonAnimation _skeletonAnimation;
-	public AnimationReferenceAsset idle,remar;
+	public AnimationReferenceAsset idle,remar,morrer;
 
 	//Audio controllers
 	private AudioSource rowingSFX;
 	private float audioPitch = 1;
+
+	private bool isGameOver = false;
 
 	void Start ()
 	{
@@ -46,6 +48,17 @@ public class PlayerController : MonoBehaviour {
 	
 	void Update () 
 	{
+		if(GameManager.Instance.gameOver)
+		{
+			if(!isGameOver && !GameManager.Instance.winner)
+			{
+				_skeletonAnimation.AnimationState.AddEmptyAnimation(1,0,0);
+				_skeletonAnimation.AnimationState.AddEmptyAnimation(2,0,0);
+				_skeletonAnimation.AnimationState.SetAnimation(0,morrer,false);
+				isGameOver = true;
+			}
+			return;
+		}
 		//Ler um comando e adicionar e avisar o personagem que deve se mover
 		xMovement = Input.GetAxisRaw("Horizontal");
 		yMovement = Input.GetAxisRaw("Vertical");

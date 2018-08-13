@@ -13,7 +13,14 @@ public class FishingSystem : MonoBehaviour {
 	[SerializeField] private int _probabilityToCatch;
 	
 	[SerializeField] private SkeletonAnimation rodAnimation;
+
+	public AnimationReferenceAsset fisgada,perder_peixe,pescar;
+
 	private bool _fishIn = false;
+
+	private void Start() {
+		rodAnimation = GetComponent<SkeletonAnimation>();
+	}
 
 	// Update is called once per frame
 	void Update () {
@@ -22,7 +29,7 @@ public class FishingSystem : MonoBehaviour {
 				_currentTimeWithoutFish += Time.deltaTime;
 			if (FishingRoulette () <= _probabilityToCatch + _currentTimeWithoutFish) {
 				_fishIn = true;
-				rodAnimation.AnimationState.SetAnimation(0,"Fisgada",true);
+				rodAnimation.AnimationState.SetAnimation(0,fisgada,true);
 				//Disparar animação da vara em loop
 			}
 		}
@@ -38,8 +45,8 @@ public class FishingSystem : MonoBehaviour {
 			if (FishingRoulette () <= _timeWithFish) {
 				ResetSystem ();
 				//Dispara som de perder o peixe
-				rodAnimation.AnimationState.SetAnimation(0,"Perder peixe",false);
-				rodAnimation.AnimationState.AddAnimation(0,"Pescar",false,0);
+				rodAnimation.AnimationState.SetAnimation(0,perder_peixe,false);
+				rodAnimation.AnimationState.AddAnimation(0,pescar,false,0);
 				//Dispara animação da vara perdendno o peixe
 			}
 		}
