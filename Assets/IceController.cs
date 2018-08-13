@@ -52,15 +52,18 @@ public class IceController : Singleton<IceController> {
 			GameManager.Instance.gameOver = true;
 	}
 
-	public IEnumerator StartImmortality () {
+	public IEnumerator StartImmortality (GameObject hitter) {
+		float timeToFinish = 0;
 		canHit = false;
 		ChangeIceCollidersState ();
 		//Dispara animação de hit
 		//Active hit Animation and Imortal Animation
+		Collider2D hitterCollider = hitter.GetComponent<Collider2D> ();
+		hitterCollider.enabled = !hitterCollider.enabled;
 		yield return new WaitForSeconds (timeForNextHit);
-		Debug.Log("Teste");
 		ChangeIceCollidersState ();
 		canHit = true;
+		hitter.SetActive (false);
 	}
 
 	//Função responsável por desabilitar e habilitar os colisores dos gelos
