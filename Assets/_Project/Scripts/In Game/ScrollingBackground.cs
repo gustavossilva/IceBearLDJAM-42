@@ -13,6 +13,7 @@ public class ScrollingBackground : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//0 - -38.4 em 60s (1 minuto por fase)
+		GameManager.Instance.map = map;
 	}
 	
 	// Update is called once per frame
@@ -31,6 +32,7 @@ public class ScrollingBackground : MonoBehaviour {
 		{
 			Debug.Log("new map start");
 			map++;
+			GameManager.Instance.map = map;
 			//Start new map
 		}
 		if(map == 5 && GameManager.Instance.isBossAlive)
