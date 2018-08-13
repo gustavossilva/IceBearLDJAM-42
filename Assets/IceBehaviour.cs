@@ -38,7 +38,6 @@ public class IceBehaviour : MonoBehaviour {
 	}
 
 	private void Start () {
-		StartSharkAnimation();
 		StartCoroutine (SunBurn ());
 	}
 

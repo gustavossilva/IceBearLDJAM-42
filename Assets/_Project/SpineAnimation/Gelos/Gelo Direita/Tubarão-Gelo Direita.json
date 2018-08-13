@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "EKZv1Se1XfbDhCt/zfHne+PN+0c", "spine": "3.6.53", "width": 356.16, "height": 209.89, "images": "./Shark/" },
+"skeleton": { "hash": "TNieY7fQija/i5eGfJEqzZMGl7s", "spine": "3.6.53", "width": 356.16, "height": 209.89, "images": "./Shark/" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "bone", "parent": "root", "y": 99.43 },
@@ -236,6 +236,13 @@
 			"corpo": {
 				"attachment": [
 					{ "time": 0, "name": null }
+				]
+			},
+			"gelo/direita": {
+				"attachment": [
+					{ "time": 0, "name": "gelo/direita" },
+					{ "time": 0.1667, "name": null },
+					{ "time": 0.3333, "name": "gelo/direita" }
 				]
 			},
 			"guelrras": {
@@ -623,6 +630,17 @@
 						{ "time": 0 }
 					]
 				}
+			}
+		}
+	},
+	"hit": {
+		"slots": {
+			"gelo/direita": {
+				"attachment": [
+					{ "time": 0, "name": "gelo/direita" },
+					{ "time": 0.1667, "name": null },
+					{ "time": 0.3333, "name": "gelo/direita" }
+				]
 			}
 		}
 	}

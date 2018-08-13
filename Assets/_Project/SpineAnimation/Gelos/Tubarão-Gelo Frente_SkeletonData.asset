@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
-  m_Name: "Tubar\xE3oGelo Frente_SkeletonData"
+  m_Name: "Tubar\xE3o-Gelo Frente_SkeletonData"
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: 36a41e46217abe5458d3c1f204ae73dd, type: 2}
+  - {fileID: 11400000, guid: 039e21586edba5e4a923a11a8f9476d3, type: 2}
   scale: 0.01
-  skeletonJSON: {fileID: 4900000, guid: f107a909270ef8a4e8f2fe5b642a9178, type: 3}
+  skeletonJSON: {fileID: 4900000, guid: 5075f183a57bf5c4690231abfd06ee57, type: 3}
   fromAnimation: []
   toAnimation: []
   duration: []
