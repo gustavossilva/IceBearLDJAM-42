@@ -11,7 +11,7 @@ public class IceController : Singleton<IceController> {
 
 	public int coldWaterHeal = 1;
 	public int sunDamage = 1;
-	float timeForNextHit = 1;
+	float timeForNextHit = 1f;
 
 	[SerializeField] Collider2D[] iceList;
 
@@ -58,6 +58,7 @@ public class IceController : Singleton<IceController> {
 		//Dispara animação de hit
 		//Active hit Animation and Imortal Animation
 		yield return new WaitForSeconds (timeForNextHit);
+		Debug.Log("Teste");
 		ChangeIceCollidersState ();
 		canHit = true;
 	}
