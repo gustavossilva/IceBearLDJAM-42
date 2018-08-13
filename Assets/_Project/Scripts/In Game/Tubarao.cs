@@ -145,17 +145,17 @@ public class Tubarao : Enemy {
 		}
 	}
 
-	public IceBehaviour Attack()
+	public IceBehaviour Attack(List<IceBehaviour> list)
 	{
 		isAlive = true;
-		int randomIndex = Random.Range(0, 4);
-		iceBehaviour = IceController.Instance.iceScripts[randomIndex];
+		int randomIndex = Random.Range(0, list.Count);
+		iceBehaviour = list[randomIndex];
 
 		// Enquanto nao achar uma plataforma que nao tenha tubarao, continua sorteando... Nojo haha
-		while(iceBehaviour != null && SpawnerInimigo.dic.ContainsKey(iceBehaviour.MyPosition))
+		while(SpawnerInimigo.dic.ContainsKey(iceBehaviour.MyPosition))
 		{
 			randomIndex = Random.Range(0, 4);
-			iceBehaviour = IceController.Instance.iceScripts[randomIndex];
+			iceBehaviour = list[randomIndex];
 		}
 
 		SpawnerInimigo.dic.Add(iceBehaviour.MyPosition, this);

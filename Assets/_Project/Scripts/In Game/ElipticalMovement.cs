@@ -96,19 +96,24 @@ public class ElipticalMovement : MonoBehaviour {
 			children[i].SetActive(false);
 		}
 
-		int plataformasDisponiveis = -1;
+		int plataformasDisponiveis = 0;
+
+		List<IceBehaviour> l = new List<IceBehaviour>();
 
 		for(int i = 0; i< IceController.Instance.iceScripts.Length; i++)
 		{
-			if(IceController.Instance.iceScripts[i] != null)
+			if(IceController.Instance.iceScripts[i] != null && IceController.Instance.iceScripts[i].MyPosition != IcePosition.ICE_CENTER)
+			{
 				plataformasDisponiveis++;
+				l.Add(IceController.Instance.iceScripts[i]);
+			}
 		}
 
 		// Se ha plataformas disponiveis
 		if((plataformasDisponiveis - SpawnerInimigo.dic.Count) > 0)
 		{	
 			// Escolhe plataforma
-			IceBehaviour ice = tubarao.Attack();
+			IceBehaviour ice = tubarao.Attack(l);
 			IcePosition position = ice.MyPosition;
 
 			float currentChewingTime = 0f;
