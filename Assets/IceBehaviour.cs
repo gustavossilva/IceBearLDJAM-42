@@ -33,7 +33,7 @@ public class IceBehaviour : MonoBehaviour {
 	/// Awake is called when the script instance is being loaded.
 	/// </summary>
 	void Awake () {
-			
+
 		controlRef = IceController.Instance;
 	}
 
@@ -81,6 +81,15 @@ public class IceBehaviour : MonoBehaviour {
 		return this.life > 0 ? true : false;
 	}
 
+	private void Update () {
+		if (this.life <= 0) {
+			//Tira da lista antes de se desativar
+			controlRef.iceScripts[(int) myPosition] = null;
+			//Dispara couritina de animação de então desativa
+			gameObject.SetActive (false);
+		}
+	}
+
 	private IEnumerator SunBurn () {
 		while (this.life > 0) {
 			yield return new WaitForSeconds (1);
@@ -90,9 +99,5 @@ public class IceBehaviour : MonoBehaviour {
 				TakeDamage (-controlRef.sunDamage);
 			}
 		}
-		//Tira da lista antes de se desativar
-		controlRef.iceScripts[(int) myPosition] = null;
-		//Dispara couritina de animação de então desativa
-		gameObject.SetActive (false);
 	}
 }
