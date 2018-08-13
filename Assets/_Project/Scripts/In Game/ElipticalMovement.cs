@@ -13,6 +13,36 @@ public class ElipticalMovement : MonoBehaviour {
 
 	public float surroundingTime = 4f;
 	[HideInInspector] public float currentSurroundingTime;
+	[HideInInspector] public Animator anim;
+	[HideInInspector] public GameObject[] children;
+
+
+	void Awake()
+	{
+		anim = GetComponent<Animator>();
+		children = new GameObject[transform.childCount];
+
+		for (int i = 0; i < children.Length; i++)
+		{
+			children[i] = transform.GetChild(i).gameObject;
+			children[i].SetActive(true);
+		}
+	}
+
+	void OnEnable()
+	{
+		anim.enabled = true;
+		for (int i = 0; i < children.Length; i++)
+		{
+			children[i] = transform.GetChild(i).gameObject;
+			children[i].SetActive(true);
+		}
+	}
+
+	void OnDisable()
+	{
+		anim.enabled = false;
+	}
 
  	// public void Move (Tubarao tubarao, float velocidadeRodeio, float centerX, float centerY) 
 	// {
@@ -59,10 +89,29 @@ public class ElipticalMovement : MonoBehaviour {
 			yield return null;
 		}
 
-		gameObject.SetActive(false);
+		for (int i = 0; i < children.Length; i++)
+		{
+			children[i] = transform.GetChild(i).gameObject;
+			children[i].SetActive(false);
+		}
 
-		yield return new WaitForSeconds(.5f);
+		// IcePosition position = tubarao.Attack();
 
-		
+		// float currentChewingTime = 0f;
+
+		// while(currentChewingTime <= tubarao.chewingTime)
+		// {
+		// 	currentChewingTime += Time.deltaTime;
+		// 	// Apply damage to the platform
+		// 	IceController.Instance.TakeDamageByElement(tubarao.damagePerSecond * (int)currentChewingTime, position);
+		// 	yield return null;
+		// }
+
+		// // If the player has not killed the shark yet, e.g. it is still alive
+		// if(tubarao.isAlive)
+		// {
+		// 	IceController.Instance.StopSharkAnim(position);
+		// 	gameObject.SetActive(true);
+		// }
  	}
 }

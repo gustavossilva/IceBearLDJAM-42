@@ -16,6 +16,9 @@ public class Tubarao : Enemy {
 	private float sign;
 	private bool doingSurrounding;
 
+	public float chewingTime = 3f;
+	public bool isAlive = false;
+
 
 	protected override void Awake()
 	{
@@ -136,6 +139,16 @@ public class Tubarao : Enemy {
 				return 1;
 			}
 		}
+	}
+
+	public IcePosition Attack()
+	{
+		isAlive = true;
+		IcePosition position = (IcePosition)Random.Range(1, 5);
+		
+		IceController.Instance.StartSharkAnim(position);
+
+		return position;
 	}
 
 	void OnDrawGizmos()

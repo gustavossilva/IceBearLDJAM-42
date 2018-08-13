@@ -9,6 +9,8 @@ public abstract class Enemy : MonoBehaviour {
 	protected float speed;
     protected Vector2 velocity;
 
+    public int damagePerSecond = 1;
+
     protected virtual void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();

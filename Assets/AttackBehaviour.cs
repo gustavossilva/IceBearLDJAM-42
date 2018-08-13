@@ -69,6 +69,6 @@ public class AttackBehaviour : MonoBehaviour {
 		transform.localScale = new Vector2(1f, transform.localScale.y);
 		trackClear = true;
 		
-		// Apply damage
+		// Kill shark if there is one
 	}
 }
