@@ -50,7 +50,7 @@ public class BossBattle : MonoBehaviour {
 			}
 			else
 			{
-				transform.position += Vector3.left *  (5*Time.deltaTime);
+				transform.position += Vector3.left *  (10*Time.deltaTime);
 				if(transform.position.y > bearTransform.position.y)
 				{
 					GetComponent<MeshRenderer>().sortingLayerName = "Enemy";
