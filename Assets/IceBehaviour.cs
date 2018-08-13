@@ -33,11 +33,12 @@ public class IceBehaviour : MonoBehaviour {
 	/// Awake is called when the script instance is being loaded.
 	/// </summary>
 	void Awake () {
-
+			
 		controlRef = IceController.Instance;
 	}
 
 	private void Start () {
+		StartSharkAnimation();
 		StartCoroutine (SunBurn ());
 	}
 
@@ -56,13 +57,13 @@ public class IceBehaviour : MonoBehaviour {
 
 	public void StartSharkAnimation () {
 		if (iceSkeleton != null) {
-			iceSkeleton.AnimationState.AddAnimation (0, "Saltar", false, 0);
+			iceSkeleton.AnimationState.SetAnimation (0, "Saltar", false);
 			iceSkeleton.AnimationState.AddAnimation (0, "Morder", true, 0);
 		}
 	}
 	public void StopSharkAnimation () {
 		if (iceSkeleton != null) {
-			iceSkeleton.AnimationState.AddAnimation (0, "Death", false, 0);
+			iceSkeleton.AnimationState.SetAnimation (0, "Death", false);
 			iceSkeleton.AnimationState.AddAnimation (0, "Gelo", true, 0);
 		}
 	}
