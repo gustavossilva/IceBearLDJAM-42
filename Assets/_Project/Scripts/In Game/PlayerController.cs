@@ -62,6 +62,9 @@ public class PlayerController : MonoBehaviour {
 		if(!GameManager.Instance.isBossAlive)
 		{
 			transform.position = new Vector2(Mathf.Lerp(transform.position.x,-6.7f,3*Time.deltaTime),Mathf.Lerp(transform.position.y,-1.37f,3*Time.deltaTime));
+			_skeletonAnimation.AnimationState.AddEmptyAnimation(1,0,0);
+			_skeletonAnimation.AnimationState.AddEmptyAnimation(2,0,0);
+			_skeletonAnimation.AnimationState.SetAnimation(0,idle,true);
 			return;
 		}
 		//Ler um comando e adicionar e avisar o personagem que deve se mover

@@ -76,6 +76,9 @@ public class GameManager : Singleton<GameManager> {
 
 	public void SpeedToInit()
 	{
-		gameSpeed = initSpeed;
+		if(!startBossBatle)
+		{
+			gameSpeed = initSpeed;
+		}
 	}
 }
