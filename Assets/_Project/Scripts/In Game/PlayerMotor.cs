@@ -19,9 +19,11 @@ public class PlayerMotor : MonoBehaviour {
 	[SerializeField] private float stamina = 100f;
 	[SerializeField] private float drainStaminaQtd = 1f;
 
+	//Break direction
 	private float directionX;
 	private float directionY;
 
+	//Checa se o personagem se moveu e se ele acelerou
 	private bool isMoving = false;
 	private bool wasAccelerate = false;
 	
@@ -71,7 +73,8 @@ public class PlayerMotor : MonoBehaviour {
 		wasAccelerate = true;
 	}
 
-	private void Update() {
+	private void Update() 
+	{
 		if(wasAccelerate)
 		{
 			maxSpeed = Mathf.Lerp(maxSpeed,5,3*Time.deltaTime);

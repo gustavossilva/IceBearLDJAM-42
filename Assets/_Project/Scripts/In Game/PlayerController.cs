@@ -93,7 +93,6 @@ public class PlayerController : MonoBehaviour {
 		{
 			if(!isPressingShift)
 			{
-				//Mudar animação
 				isPressingShift = true;
 			}
 		}
@@ -111,6 +110,7 @@ public class PlayerController : MonoBehaviour {
 		
 	}
 
+	//Do the rowing animation and play the sound
 	IEnumerator MovementAnimation()
 	{
 		_skeletonAnimation.AnimationState.AddEmptyAnimation(1,1f,0.1f);

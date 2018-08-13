@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class ScrollingBackground : MonoBehaviour {
 
-	private float newMap = 0f;
 	public int map = 1;
+
+	private float newMap = 0f;
 	private int lastMap = 5;
 	private float speed = 5f;
-
-	public bool isBossAlive = true; //(Colocar no gamemanager)
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +16,12 @@ public class ScrollingBackground : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
+		if(GameManager.Instance.gameOver)
+		{
+			return;
+		}
 		//check if there is a game over
 		//Init of map - 20.6 to get the final pos
 		//Check boss fight
@@ -29,11 +33,11 @@ public class ScrollingBackground : MonoBehaviour {
 			map++;
 			//Start new map
 		}
-		if(map == 5 && isBossAlive)
+		if(map == 5 && GameManager.Instance.isBossAlive)
 		{
 			speed = 0; //boss fight
 		}
-		else if(map == 5 && !isBossAlive)
+		else if(map == 5 && !GameManager.Instance.isBossAlive)
 		{
 			speed = 5f;
 		}

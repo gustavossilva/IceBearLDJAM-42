@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Controll the player
 public class PlayerManager : Singleton<PlayerManager> {
 
 	public GameObject player;
