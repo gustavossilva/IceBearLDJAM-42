@@ -7,7 +7,7 @@ public class IceBehaviour : MonoBehaviour {
 
 	IceController controlRef;
 
-	[SerializeField] private int life = 100;
+	[SerializeField] private int life = 400;
 
 	public int Life {
 		private set { }
