@@ -21,7 +21,6 @@ public class LifeSliderController : MonoBehaviour {
 		for(int i =0; i< iceScripts.Length;i++){
 			totalLife += iceScripts[i].Life;
 		}
-		Debug.Log(totalLife/20);
 		iceLifeSlider.value = totalLife/20;
 	}
 
