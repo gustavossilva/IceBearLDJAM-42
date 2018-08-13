@@ -5,8 +5,6 @@ using UnityEngine;
 public class CorrenteFria : MonoBehaviour {
 
 	public int recuperacaoOverTime;
-
-	private Vector2 direcao = Vector2.left;
 	private Vector2 velocidade;
 	private Rigidbody2D rb2D;
 
@@ -59,6 +57,19 @@ public class CorrenteFria : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D collider)
 	{
-		print("energia++");
+		if(collider.CompareTag("someTag"))
+		{
+			IceController.Instance.coldWater = true;
+			print("energia++");
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D collider)
+	{
+		if(collider.CompareTag("someTag"))
+		{
+			IceController.Instance.coldWater = false;
+			print("energia--");
+		}
 	}
 }

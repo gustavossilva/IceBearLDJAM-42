@@ -60,5 +60,9 @@ public class ElipticalMovement : MonoBehaviour {
 		}
 
 		gameObject.SetActive(false);
+
+		yield return new WaitForSeconds(.5f);
+
+		
  	}
 }
