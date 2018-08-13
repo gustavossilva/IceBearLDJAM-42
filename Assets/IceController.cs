@@ -56,11 +56,15 @@ public class IceController : Singleton<IceController> {
 		canHit = true;
 	}
 
-	//Função responsável por desabilitar e abilitar os colisores dos gelos
+	//Função responsável por desabilitar e habilitar os colisores dos gelos
 	private void ChangeIceCollidersState () {
 		for (int i = 0; i < iceList.Length; i++) {
 			if (iceList[i] != null) {
-				if (iceScripts[i])
+					if(iceList[i].enabled){
+						iceScripts[i].StartImmortalState();
+					}else{
+						iceScripts[i].StopImmortalState();
+					}
 					iceList[i].enabled = !iceList[i].enabled;
 			}
 		}
