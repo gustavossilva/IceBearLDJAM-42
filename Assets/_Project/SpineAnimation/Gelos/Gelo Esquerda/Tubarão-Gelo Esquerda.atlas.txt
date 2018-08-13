@@ -1,0 +1,62 @@
+
+Tubarão-Gelo Esquerda.png
+size: 1024,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+barbatana
+  rotate: true
+  xy: 743, 57
+  size: 66, 77
+  orig: 68, 79
+  offset: 1, 1
+  index: -1
+bico
+  rotate: false
+  xy: 423, 40
+  size: 119, 83
+  orig: 121, 85
+  offset: 1, 1
+  index: -1
+corpo
+  rotate: false
+  xy: 2, 13
+  size: 277, 110
+  orig: 279, 112
+  offset: 1, 1
+  index: -1
+gelo/esquerdo
+  rotate: false
+  xy: 281, 2
+  size: 140, 121
+  orig: 140, 121
+  offset: 0, 0
+  index: -1
+guelrras
+  rotate: false
+  xy: 423, 2
+  size: 21, 36
+  orig: 23, 38
+  offset: 1, 1
+  index: -1
+mandibula
+  rotate: false
+  xy: 649, 61
+  size: 92, 62
+  orig: 94, 64
+  offset: 1, 1
+  index: -1
+nadadeira
+  rotate: true
+  xy: 544, 71
+  size: 52, 103
+  orig: 54, 105
+  offset: 1, 1
+  index: -1
+olho
+  rotate: false
+  xy: 544, 55
+  size: 13, 14
+  orig: 15, 16
+  offset: 1, 1
+  index: -1

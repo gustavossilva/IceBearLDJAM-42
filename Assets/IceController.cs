@@ -39,6 +39,13 @@ public class IceController : Singleton<IceController> {
 		//Disparar animação necessária;
 	}
 
+	public void StartSharkAnim (IcePosition pos){
+		iceScripts[(int)pos].StartSharkAnimation();
+	}
+	public void StopSharkAnim (IcePosition pos){
+		iceScripts[(int)pos].StopSharkAnimation();
+	}
+
 	IEnumerator StartImmortality () {
 		canHit = false;
 		ChangeIceCollidersState ();
