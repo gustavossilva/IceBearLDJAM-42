@@ -47,8 +47,12 @@ public class IceController : Singleton<IceController> {
 	public void StopSharkAnim (IcePosition pos) {
 		iceScripts[(int) pos].StopSharkAnimation ();
 	}
+	private void Update () {
+		if (iceScripts[(int) IcePosition.ICE_CENTER] == null)
+			GameManager.Instance.gameOver = true;
+	}
 
-	IEnumerator StartImmortality () {
+	public IEnumerator StartImmortality () {
 		canHit = false;
 		ChangeIceCollidersState ();
 		//Dispara animação de hit
