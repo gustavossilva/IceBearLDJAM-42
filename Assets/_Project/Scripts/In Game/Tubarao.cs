@@ -25,10 +25,13 @@ public class Tubarao : Enemy {
 	{
 		speed = 2f;
 
-		urso = SpawnerInimigo.urso;
-
 		// Nothing so far
 		base.Awake();
+	}
+
+	void Start()
+	{
+		urso = SpawnerInimigo.urso;
 	}
 
 	void OnEnable()

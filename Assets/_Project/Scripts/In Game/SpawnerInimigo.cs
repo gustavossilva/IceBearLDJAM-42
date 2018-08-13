@@ -18,7 +18,7 @@ public class SpawnerInimigo : MonoBehaviour {
 	public static Dictionary<IcePosition, Tubarao> dic;
 
 	// Use this for initialization
-	void Awake ()
+	void Start ()
 	{
 		pool = GetComponent<ObjectPool>();
 		currentTime = 0f;
