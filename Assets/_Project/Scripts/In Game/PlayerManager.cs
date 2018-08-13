@@ -9,6 +9,8 @@ public class PlayerManager : Singleton<PlayerManager> {
 	public PlayerMotor playerMotor;
 	public PlayerController playerController;
 
+	public bool attacking = false;
+
 	protected override void Awake()
 	{
 		IsPersistentBetweenScenes = false;

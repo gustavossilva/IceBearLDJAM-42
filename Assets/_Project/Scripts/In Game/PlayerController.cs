@@ -54,10 +54,16 @@ public class PlayerController : MonoBehaviour {
 		if(xMovement != 0 || yMovement != 0)
 		{
 			//Animation routines
-			if(!isMoving && canDoAnimationAgain)
+			if(!isMoving && canDoAnimationAgain && !PlayerManager.Instance.attacking)
 			{
 				isMoving = true;
 				StartCoroutine(MovementAnimation());
+			}
+			else if(PlayerManager.Instance.attacking)
+			{
+				isMoving = false;
+				_skeletonAnimation.AnimationState.AddEmptyAnimation(1,0f,0.5f);
+				StopAllCoroutines();
 			}
 
 			//Movements routines
@@ -81,9 +87,9 @@ public class PlayerController : MonoBehaviour {
 		{
 			//Para o movimento e desliga
 			_skeletonAnimation.AnimationState.AddEmptyAnimation(1,.5f,1f);
+			StopAllCoroutines();
 			canDoAnimationAgain = true;
 			isMoving = false;
-			StopAllCoroutines();
 			motor.StopMovement(lastDirectionX,lastDirectionY);
 			//idle animation
 		}
@@ -116,7 +122,8 @@ public class PlayerController : MonoBehaviour {
 		_skeletonAnimation.AnimationState.AddEmptyAnimation(1,1f,0.1f);
 		while(isMoving)
 		{
-			
+			if(PlayerManager.Instance.attacking)
+				break;
 			Spine.TrackEntry teste = _skeletonAnimation.AnimationState.SetAnimation(1,remar,false);
 			teste.timeScale = audioPitch;
 			rowingSFX.pitch = audioPitch;
