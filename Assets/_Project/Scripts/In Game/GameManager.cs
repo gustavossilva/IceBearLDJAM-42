@@ -15,6 +15,9 @@ public class GameManager : Singleton<GameManager> {
 	public SkeletonAnimation filhoAnimation;
 	public AnimationReferenceAsset filhoFeliz,filhoTriste;
 
+	public float gameSpeed = 1f;
+	public float initSpeed = 1f;
+
 	private float gameOverTimer = 0;
 
 	private bool isFilhoSad = true;
@@ -25,6 +28,7 @@ public class GameManager : Singleton<GameManager> {
 		base.Awake();
 	}
 	private void Start() {
+		initSpeed = gameSpeed;
 		filhoAnimation.AnimationState.SetAnimation(0,filhoTriste,true);
 	}
 
@@ -60,5 +64,18 @@ public class GameManager : Singleton<GameManager> {
 			isFilhoSad = false;
 			filhoAnimation.AnimationState.SetAnimation(0,filhoFeliz,true);
 		}
+	}
+
+	public void UpdateSpeed()
+	{
+		if(!startBossBatle)
+		{
+			gameSpeed = initSpeed + (initSpeed*0.20f);
+		}
+	}
+
+	public void SpeedToInit()
+	{
+		gameSpeed = initSpeed;
 	}
 }

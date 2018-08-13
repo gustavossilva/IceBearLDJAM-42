@@ -26,6 +26,7 @@ public class ScrollingBackground : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		speed = GameManager.Instance.gameSpeed;
 		if(GameManager.Instance.gameOver)
 		{
 			return;
@@ -48,12 +49,12 @@ public class ScrollingBackground : MonoBehaviour {
 			if(!bossMusic.GetComponent<AudioSource>().isPlaying)
 				bossMusic.GetComponent<AudioSource>().Play();
 			GameManager.Instance.startBossBatle = true;
-			speed = 0; //boss fight
+			GameManager.Instance.gameSpeed = 0; //boss fight
 		}
 		else if(map == 5 && !GameManager.Instance.isBossAlive)
 		{
 			bossMusic.GetComponent<AudioSource>().Stop();
-			speed = 5f;
+			GameManager.Instance.SpeedToInit();
 
 		}
 		if(transform.position.x < -173.2) //(-38.4f * (lastMap-1) - 20.6f)
@@ -64,7 +65,7 @@ public class ScrollingBackground : MonoBehaviour {
 			}
 			GameManager.Instance.winner = true;
 			GameManager.Instance.UpdateFilhoAnimation();
-			speed = 0;
+			GameManager.Instance.gameSpeed = 0;
 			finalTimer += Time.deltaTime;
 		}
 		if(finalTimer > 4)

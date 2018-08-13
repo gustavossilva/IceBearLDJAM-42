@@ -59,6 +59,11 @@ public class PlayerController : MonoBehaviour {
 			}
 			return;
 		}
+		if(!GameManager.Instance.isBossAlive)
+		{
+			transform.position = new Vector2(Mathf.Lerp(transform.position.x,-6.7f,3*Time.deltaTime),Mathf.Lerp(transform.position.y,-1.37f,3*Time.deltaTime));
+			return;
+		}
 		//Ler um comando e adicionar e avisar o personagem que deve se mover
 		xMovement = Input.GetAxisRaw("Horizontal");
 		yMovement = Input.GetAxisRaw("Vertical");
@@ -88,11 +93,16 @@ public class PlayerController : MonoBehaviour {
 			//Se o shift for pressionado, altera a velocidade do som e acelera o personagem
 			if(isPressingShift)
 			{
+				if(xMovement > 0)
+				{
+					GameManager.Instance.UpdateSpeed();
+				}
 				audioPitch = 1.4f;
 				motor.Accelerate();
 			}
 			else
 			{
+				GameManager.Instance.SpeedToInit();
 				audioPitch = 1;
 			}
 		}
