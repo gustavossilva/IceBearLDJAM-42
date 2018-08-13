@@ -57,14 +57,14 @@ public class Obstaculo : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
-		if(collider.CompareTag("Player"))
+		if(collider.CompareTag("Player") && IceController.Instance.canHit)
 		{
 			print("obstaculo colidiu");
 			IcePosition pos = collider.GetComponent<IceBehaviour>().MyPosition;
 
 			// Danifica a plataforma
 			IceController.Instance.TakeDamageByElement(-dano, pos);
-
+			StartCoroutine(IceController.Instance.StartImmortality());
 			gameObject.SetActive(false);
 		}
 	}
