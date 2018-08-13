@@ -103,7 +103,7 @@ public class ElipticalMovement : MonoBehaviour {
 		{
 			currentChewingTime += Time.deltaTime;
 			// Apply damage to the platform
-			IceController.Instance.TakeDamageByElement(tubarao.damagePerSecond * (int)currentChewingTime, position);
+			IceController.Instance.TakeDamageByElement(-(tubarao.damagePerSecond * (int)currentChewingTime), position);
 			yield return null;
 		}
 

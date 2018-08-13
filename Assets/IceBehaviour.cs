@@ -66,6 +66,16 @@ public class IceBehaviour : MonoBehaviour {
 			iceSkeleton.AnimationState.AddAnimation (0, "Gelo", true, 0);
 		}
 	}
+	public void StartImmortalState () {
+		if (iceSkeleton != null) {
+			iceSkeleton.AnimationState.SetAnimation (0, "hit", true);
+		}
+	}
+	public void StopImmortalState () {
+		if (iceSkeleton != null) {
+			iceSkeleton.AnimationState.SetAnimation (0, "Gelo", true);
+		}
+	}
 
 	public bool isAlive () {
 		return this.life > 0 ? true : false;
