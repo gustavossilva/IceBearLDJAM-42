@@ -89,29 +89,63 @@ public class ElipticalMovement : MonoBehaviour {
 			yield return null;
 		}
 
+		// Desabilita barbatana
 		for (int i = 0; i < children.Length; i++)
 		{
 			children[i] = transform.GetChild(i).gameObject;
 			children[i].SetActive(false);
 		}
 
-		IcePosition position = tubarao.Attack();
+		int plataformasDisponiveis = 0;
 
-		float currentChewingTime = 0f;
+		List<IceBehaviour> l = new List<IceBehaviour>();
 
-		while(tubarao.isAlive)
+		for(int i = 0; i< IceController.Instance.iceScripts.Length; i++)
 		{
-			currentChewingTime += Time.deltaTime;
-			
-			// Apply damage to the platform
-			
-			IceController.Instance.TakeDamageByElement(-(tubarao.damagePerSecond * (int)currentChewingTime), position);
-			
-			yield return null;
+			if(IceController.Instance.iceScripts[i] != null && IceController.Instance.iceScripts[i].MyPosition != IcePosition.ICE_CENTER)
+			{
+				plataformasDisponiveis++;
+				l.Add(IceController.Instance.iceScripts[i]);
+			}
 		}
 
-		IceController.Instance.StopSharkAnim(position);
-		gameObject.SetActive(false);
+		// Se ha plataformas disponiveis
+		if((plataformasDisponiveis - SpawnerInimigo.dic.Count) > 0)
+		{	
+			// Escolhe plataforma
+			IceBehaviour ice = tubarao.Attack(l);
+			IcePosition position = ice.MyPosition;
 
+			float currentChewingTime = 0f;
+
+			// Comeca a morder...
+			while(tubarao.isAlive)
+			{
+				currentChewingTime += Time.deltaTime;
+				
+				// Apica dano a plataforma
+				if(currentChewingTime > 1)
+				{
+					currentChewingTime = 0f;
+					IceController.Instance.TakeDamageByElement(-tubarao.damagePerSecond, position);
+
+					// plataforma destruida
+					if(ice.Life <= 2)
+					{
+						tubarao.isAlive = false;
+						SpawnerInimigo.dic.Remove(position);
+						break;
+					}
+				}
+
+				yield return null;
+			}
+
+			// Quando player hitar o tubarao, pare a animcao de morder
+			IceController.Instance.StopSharkAnim(position);
+		}
+
+		// Desabilita tubarao (caso nao haja plataformas disponiveis, simplesmente desaparece)
+		gameObject.SetActive(false);
  	}
 }
