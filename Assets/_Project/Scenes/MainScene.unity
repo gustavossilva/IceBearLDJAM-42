@@ -444,7 +444,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ce315148e00a25d4ea02841b09fa8f1e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1828,7 +1828,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a7e37910c21ddc246af46b2176a47267, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.638
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4279,7 +4279,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ef8d42302250cf54ea875b9955374677, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5324,11 +5324,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073b0927c526e9b46bbf50f4099c5a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 3
   speed: 0
   boostSpeedModifier: 2
   stamina: 100
-  drainStaminaQtd: 0.02
+  drainStaminaQtd: 0.08
 --- !u!114 &1920283237
 MonoBehaviour:
   m_ObjectHideFlags: 0

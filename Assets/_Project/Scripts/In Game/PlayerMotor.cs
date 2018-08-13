@@ -11,7 +11,7 @@ public class PlayerMotor : MonoBehaviour {
 
 	//Speed variables
 	private float initSpeed;
-	[SerializeField] private float maxSpeed = 5f;
+	[SerializeField] private float maxSpeed = 3f;
 	[SerializeField] private float speed = 0;
 	[SerializeField] private float boostSpeedModifier = 2f;
 
@@ -85,10 +85,10 @@ public class PlayerMotor : MonoBehaviour {
 		
 		if(wasAccelerate)
 		{
-			maxSpeed = Mathf.Lerp(maxSpeed,5,3*Time.deltaTime);
-			if(maxSpeed < 5.1)
+			maxSpeed = Mathf.Lerp(maxSpeed,initSpeed,3*Time.deltaTime);
+			if(maxSpeed < initSpeed + 0.1f)
 			{
-				maxSpeed = 5;
+				maxSpeed = initSpeed;
 				wasAccelerate = false;
 			}
 		}
