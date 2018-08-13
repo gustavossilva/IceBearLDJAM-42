@@ -22,9 +22,9 @@ public class menu : MonoBehaviour
 		
 	}
          public void chamaCena(string nome)
-      {
+    {
         SceneManager.LoadScene(nome);
 
-      }
+    }
 }
 
