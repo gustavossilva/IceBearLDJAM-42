@@ -11,7 +11,7 @@ public class CorrenteFria : MonoBehaviour {
 	private float offset = 3f;
 
 	public bool wavy;
-	[SerializeField] private float _speed;
+	private float _speed;
 
     private float index;
 	[SerializeField] float omegaY = 5.0f;
@@ -27,7 +27,7 @@ public class CorrenteFria : MonoBehaviour {
     void Awake()
 	{
 		rb2D = GetComponent<Rigidbody2D>();
-		speed = 1f;		// 1m/s inicialmente
+		speed = 2.5f;		// 1m/s inicialmente
 	}
 
 	void FixedUpdate()

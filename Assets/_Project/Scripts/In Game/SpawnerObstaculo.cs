@@ -36,7 +36,7 @@ public class SpawnerObstaculo : MonoBehaviour {
 			Spawn();
 		}
 
-		if(GameManager.Instance.map == 5)
+		if(GameManager.Instance.map == 4)
 		{
 			if(!startSnow)
 			{

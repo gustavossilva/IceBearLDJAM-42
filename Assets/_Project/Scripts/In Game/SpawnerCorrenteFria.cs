@@ -25,7 +25,7 @@ public class SpawnerCorrenteFria : MonoBehaviour {
 	void Update () {
 		currentTime += Time.deltaTime;
 
-		if(currentTime >= spawnTime)
+		if(currentTime >= spawnTime && GameManager.Instance.map < 5)
 		{
 			currentTime = 0;
 			Spawn();
