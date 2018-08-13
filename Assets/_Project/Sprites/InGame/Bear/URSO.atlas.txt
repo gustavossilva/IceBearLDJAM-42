@@ -6,98 +6,98 @@ filter: Linear,Linear
 repeat: none
 braco direito
   rotate: true
-  xy: 145, 56
+  xy: 553, 28
   size: 38, 98
   orig: 40, 100
   offset: 1, 1
   index: -1
 braco esquerdo
   rotate: false
-  xy: 497, 72
+  xy: 640, 69
   size: 81, 54
   orig: 83, 56
   offset: 1, 1
   index: -1
 cabeça
   rotate: true
-  xy: 410, 71
+  xy: 553, 68
   size: 55, 85
   orig: 57, 87
   offset: 1, 1
   index: -1
 corpo
   rotate: true
-  xy: 2, 10
+  xy: 410, 42
   size: 84, 141
   orig: 86, 143
   offset: 1, 1
   index: -1
 costas/braco direito
   rotate: false
-  xy: 747, 97
+  xy: 57, 3
   size: 64, 29
   orig: 64, 29
   offset: 0, 0
   index: -1
 costas/braco esquerdo
   rotate: false
-  xy: 580, 81
+  xy: 178, 49
   size: 54, 45
   orig: 54, 45
   offset: 0, 0
   index: -1
 costas/pe direito
   rotate: false
-  xy: 873, 91
+  xy: 323, 25
   size: 51, 35
   orig: 51, 35
   offset: 0, 0
   index: -1
 costas/pe esquerdo
-  rotate: true
-  xy: 203, 7
+  rotate: false
+  xy: 410, 5
   size: 47, 35
   orig: 47, 35
   offset: 0, 0
   index: -1
 costas/rabo
   rotate: false
-  xy: 410, 55
+  xy: 123, 18
   size: 14, 14
   orig: 14, 14
   offset: 0, 0
   index: -1
 jam/braco direito
   rotate: true
-  xy: 145, 11
+  xy: 653, 24
   size: 43, 56
   orig: 43, 56
   offset: 0, 0
   index: -1
 jam/braco esquerdo
   rotate: true
-  xy: 636, 83
+  xy: 178, 4
   size: 43, 56
   orig: 43, 56
   offset: 0, 0
   index: -1
 jam/pe direito
   rotate: false
-  xy: 694, 83
+  xy: 270, 17
   size: 51, 43
   orig: 51, 43
   offset: 0, 0
   index: -1
 jam/punho direito
   rotate: false
-  xy: 747, 62
+  xy: 496, 7
   size: 34, 33
   orig: 34, 33
   offset: 0, 0
   index: -1
 jam/punho esquerdo copiar
   rotate: false
-  xy: 981, 92
+  xy: 459, 6
   size: 35, 34
   orig: 35, 34
   offset: 0, 0
@@ -111,56 +111,63 @@ jam/remo
   index: -1
 nariz
   rotate: false
-  xy: 783, 84
+  xy: 532, 29
   size: 19, 11
   orig: 21, 13
   offset: 1, 1
   index: -1
 olho esquerdo
-  rotate: true
-  xy: 145, 2
+  rotate: false
+  xy: 723, 106
   size: 7, 17
   orig: 9, 19
   offset: 1, 1
   index: -1
 olho esquerdo copiar
-  rotate: true
-  xy: 164, 2
+  rotate: false
+  xy: 711, 50
   size: 7, 17
   orig: 9, 19
   offset: 1, 1
   index: -1
 orelha direita
   rotate: false
-  xy: 426, 56
+  xy: 270, 2
   size: 14, 13
   orig: 16, 15
   offset: 1, 1
   index: -1
 orelha esquerda
   rotate: false
-  xy: 442, 58
+  xy: 234, 66
   size: 11, 11
   orig: 13, 13
   offset: 1, 1
   index: -1
 pe direito
-  rotate: true
-  xy: 813, 94
+  rotate: false
+  xy: 236, 2
   size: 32, 58
   orig: 34, 60
   offset: 1, 1
   index: -1
 pe esquerdo
   rotate: true
-  xy: 926, 96
+  xy: 2, 2
   size: 30, 53
   orig: 32, 55
   offset: 1, 1
   index: -1
+peixe-11
+  rotate: true
+  xy: 376, 8
+  size: 52, 32
+  orig: 52, 32
+  offset: 0, 0
+  index: -1
 rabo
   rotate: false
-  xy: 783, 67
+  xy: 234, 79
   size: 15, 15
   orig: 17, 17
   offset: 1, 1
@@ -171,4 +178,25 @@ remo copiar
   size: 30, 247
   orig: 32, 249
   offset: 1, 1
+  index: -1
+vara-08
+  rotate: true
+  xy: 553, 125
+  size: 1, 178
+  orig: 4, 183
+  offset: 1, 2
+  index: -1
+vara-f-08-09
+  rotate: true
+  xy: 2, 34
+  size: 60, 174
+  orig: 61, 175
+  offset: 0, 0
+  index: -1
+vara-f-08-10
+  rotate: false
+  xy: 532, 19
+  size: 10, 8
+  orig: 10, 8
+  offset: 0, 0
   index: -1

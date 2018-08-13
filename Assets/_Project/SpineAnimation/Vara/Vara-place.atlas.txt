@@ -1,0 +1,27 @@
+
+Vara-place.png
+size: 512,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+vara-07
+  rotate: false
+  xy: 178, 52
+  size: 10, 7
+  orig: 10, 8
+  offset: 0, 1
+  index: -1
+vara-08
+  rotate: true
+  xy: 178, 61
+  size: 1, 178
+  orig: 4, 183
+  offset: 1, 2
+  index: -1
+vara-f-08
+  rotate: true
+  xy: 2, 2
+  size: 60, 174
+  orig: 60, 175
+  offset: 0, 0
+  index: -1
