@@ -33,16 +33,16 @@ public class IceBehaviour : MonoBehaviour {
 	/// Awake is called when the script instance is being loaded.
 	/// </summary>
 	void Awake () {
-
 		controlRef = IceController.Instance;
 	}
 
 	private void Start () {
+		this.life = 400;
 		StartCoroutine (SunBurn ());
 	}
 
 	public void TakeDamage (int damage) {
-		this.life = Mathf.Clamp (this.life + damage, 0, 100);
+		this.life = Mathf.Clamp (this.life + damage, 0, 400);
 		if (DamageTaken != null) {
 			DamageTaken.Invoke ();
 		}
