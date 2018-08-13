@@ -37,7 +37,7 @@ public class ScrollingBackground : MonoBehaviour {
 		{
 			speed = 5f;
 		}
-		if(transform.position.x < (-38.4f * (lastMap-1) - 20.6f))
+		if(transform.position.x < -173.2) //(-38.4f * (lastMap-1) - 20.6f)
 		{
 			speed = 0;
 		}

@@ -18,22 +18,27 @@ public class PlayerController : MonoBehaviour {
 	private Vector2 clampPosition = Vector2.zero;
 	private float xMovement = 0;
 	private float yMovement = 0;
+
+	//Indicates the last direction pressed
 	private float lastDirectionX;
 	private float lastDirectionY;
 
+	//Check if the user is pressing the boost button
 	private bool isPressingShift = false;
 
+	//Animation controllers
 	bool isMoving = false;
 	bool canDoAnimationAgain = true;
-
-	private AudioSource rowingSFX;
-
 	public SkeletonAnimation _skeletonAnimation;
 	public AnimationReferenceAsset idle,remar;
 
+	//Audio controllers
+	private AudioSource rowingSFX;
+	private float audioPitch = 1;
+
 	void Start ()
 	{
-		_skeletonAnimation.AnimationState.SetAnimation(0,idle,true).mixDuration = 0.5f;
+		_skeletonAnimation.AnimationState.SetAnimation(0,idle,true);
 		motor = GetComponent<PlayerMotor>();
 		rowingSFX = GetComponent<AudioSource>();
 	}
@@ -48,34 +53,37 @@ public class PlayerController : MonoBehaviour {
 		//Checa e faz o movimento
 		if(xMovement != 0 || yMovement != 0)
 		{
+			//Animation routines
 			if(!isMoving && canDoAnimationAgain)
 			{
 				isMoving = true;
 				StartCoroutine(MovementAnimation());
 			}
+
+			//Movements routines
 			lastDirectionX = xMovement;
 			lastDirectionY = yMovement;
 			//Faz o motor mover o personagem
 			motor.Movement(xMovement,yMovement);
 
-			/*if(!rowingSFX.isPlaying)
-			{
-				rowingSFX.Play();
-			}*/
+			//Se o shift for pressionado, altera a velocidade do som e acelera o personagem
 			if(isPressingShift)
 			{
-				rowingSFX.pitch = 1.4f;
+				audioPitch = 1.4f;
 				motor.Accelerate();
 			}
 			else
 			{
-				rowingSFX.pitch = 1;
+				audioPitch = 1;
 			}
-			//Else desalecerate and change speed to 5;
 		}
 		else
 		{
+			//Para o movimento e desliga
+			_skeletonAnimation.AnimationState.AddEmptyAnimation(1,.5f,1f);
+			canDoAnimationAgain = true;
 			isMoving = false;
+			StopAllCoroutines();
 			motor.StopMovement(lastDirectionX,lastDirectionY);
 			//idle animation
 		}
@@ -105,15 +113,15 @@ public class PlayerController : MonoBehaviour {
 
 	IEnumerator MovementAnimation()
 	{
-		_skeletonAnimation.AnimationState.AddEmptyAnimation(1,0.5f,0.1f);
+		_skeletonAnimation.AnimationState.AddEmptyAnimation(1,1f,0.1f);
 		while(isMoving)
 		{
-			_skeletonAnimation.AnimationState.SetAnimation(1,remar,false).mixDuration = 0.5f;
+			
+			Spine.TrackEntry teste = _skeletonAnimation.AnimationState.SetAnimation(1,remar,false);
+			teste.timeScale = audioPitch;
+			rowingSFX.pitch = audioPitch;
 			rowingSFX.Play();
-			yield return new WaitForSeconds(rowingSFX.clip.length);
+			yield return new WaitForSeconds(rowingSFX.clip.length - (rowingSFX.clip.length * (audioPitch-1)));
 		}
-		_skeletonAnimation.AnimationState.AddEmptyAnimation(1,0.5f,0.1f);
-		canDoAnimationAgain = true;
-		yield return null;
 	}
 }
