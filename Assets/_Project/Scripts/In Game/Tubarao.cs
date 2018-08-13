@@ -154,7 +154,7 @@ public class Tubarao : Enemy {
 		// Enquanto nao achar uma plataforma que nao tenha tubarao, continua sorteando... Nojo haha
 		while(SpawnerInimigo.dic.ContainsKey(iceBehaviour.MyPosition))
 		{
-			randomIndex = Random.Range(0, 4);
+			randomIndex = Random.Range(0, list.Count);
 			iceBehaviour = list[randomIndex];
 		}
 
