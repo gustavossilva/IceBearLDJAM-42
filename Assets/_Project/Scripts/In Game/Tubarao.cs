@@ -144,7 +144,7 @@ public class Tubarao : Enemy {
 	public IcePosition Attack()
 	{
 		isAlive = true;
-		IcePosition position = (IcePosition)Random.Range(1, 5);
+		IcePosition position = (IcePosition)Random.Range(0, 4);
 		
 		IceController.Instance.StartSharkAnim(position);
 
