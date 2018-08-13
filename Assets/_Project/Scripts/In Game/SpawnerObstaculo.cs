@@ -30,7 +30,7 @@ public class SpawnerObstaculo : MonoBehaviour {
 	void Update () {
 		currentTime += Time.deltaTime;
 
-		if(currentTime >= spawnTime && GameManager.Instance.map < 5)
+		if(currentTime >= spawnTime && GameManager.Instance.map < 4)
 		{
 			currentTime = 0;
 			Spawn();
