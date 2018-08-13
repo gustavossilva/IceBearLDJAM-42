@@ -63,7 +63,7 @@ public class IceBehaviour : MonoBehaviour {
 	}
 	public void StopSharkAnimation () {
 		if (iceSkeleton != null) {
-			iceSkeleton.AnimationState.AddAnimation (0, "Death", false, 0);
+			iceSkeleton.AnimationState.SetAnimation (0, "Death", false);
 			iceSkeleton.AnimationState.AddAnimation (0, "Gelo", true, 0);
 		}
 	}
