@@ -101,6 +101,9 @@ MonoBehaviour:
   _timeWithFish: 0
   _probabilityToCatch: 0
   rodAnimation: {fileID: 0}
+  fisgada: {fileID: 0}
+  perder_peixe: {fileID: 0}
+  pescar: {fileID: 0}
 --- !u!114 &114730840903868442
 MonoBehaviour:
   m_ObjectHideFlags: 1

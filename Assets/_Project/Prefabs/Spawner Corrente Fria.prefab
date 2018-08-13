@@ -128,4 +128,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTransformPos: {fileID: 4616045885620896}
   minTransformPos: {fileID: 4736569289266018}
-  spawnTime: 8
+  spawnTime: 20
