@@ -32,8 +32,20 @@ public class SpawnerInimigo : MonoBehaviour {
 	
 	void Update () 
 	{
+
+		int plataformasDisponiveis = -1;
+
+		for(int i = 0; i< IceController.Instance.iceScripts.Length; i++)
+		{
+			if(IceController.Instance.iceScripts[i] != null)
+				plataformasDisponiveis++;
+		}
+
 		// Only counts time when there is an available space to chew
-		if(dic.Count < 4)
+		// plataformasDisponiveis -> plataformas ainda nao destruidas
+		// dic.Count -> plataformas onde nao ha tubarao
+		// Uma plataformaDisponivel pode conter um tubarao
+		if((plataformasDisponiveis - dic.Count) > 0)
 		{
 			currentTime += Time.deltaTime;
 			

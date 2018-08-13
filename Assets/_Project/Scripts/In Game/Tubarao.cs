@@ -19,7 +19,7 @@ public class Tubarao : Enemy {
 	public float chewingTime = 3f;
 	public bool isAlive = false;
 
-	IcePosition position;
+	IceBehaviour iceBehaviour;
 
 	protected override void Awake()
 	{
@@ -145,20 +145,23 @@ public class Tubarao : Enemy {
 		}
 	}
 
-	public IcePosition Attack()
+	public IceBehaviour Attack()
 	{
 		isAlive = true;
-		position = (IcePosition)Random.Range(0, 4);
+		int randomIndex = Random.Range(0, 4);
+		iceBehaviour = IceController.Instance.iceScripts[randomIndex];
 
-		while(SpawnerInimigo.dic.ContainsKey(position))
+		// Enquanto nao achar uma plataforma que nao tenha tubarao, continua sorteando... Nojo haha
+		while(iceBehaviour != null && SpawnerInimigo.dic.ContainsKey(iceBehaviour.MyPosition))
 		{
-			position = (IcePosition)Random.Range(0, 4);
+			randomIndex = Random.Range(0, 4);
+			iceBehaviour = IceController.Instance.iceScripts[randomIndex];
 		}
 
-		SpawnerInimigo.dic.Add(position, this);
-		IceController.Instance.StartSharkAnim(position);
+		SpawnerInimigo.dic.Add(iceBehaviour.MyPosition, this);
+		IceController.Instance.StartSharkAnim(iceBehaviour.MyPosition);
 		
-		return position;
+		return iceBehaviour;
 	}
 
 	void OnDrawGizmos()

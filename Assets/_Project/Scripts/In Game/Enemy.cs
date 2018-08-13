@@ -9,7 +9,7 @@ public abstract class Enemy : MonoBehaviour {
 	protected float speed;
     protected Vector2 velocity;
 
-    public int damagePerSecond = 1;
+    public int damagePerSecond = 10;
 
     protected virtual void Awake()
     {
