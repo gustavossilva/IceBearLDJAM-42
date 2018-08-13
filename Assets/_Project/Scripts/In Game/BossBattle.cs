@@ -13,6 +13,8 @@ public class BossBattle : MonoBehaviour {
 
 	private SkeletonAnimation skeletonAnimation;
 
+	public AnimationReferenceAsset idle,attack;
+
 	private float initialX = 7.12f;
 
 	private bool intro= true;
@@ -22,6 +24,8 @@ public class BossBattle : MonoBehaviour {
 	private int life = 3;
 
 	private float attackTimer = 0f;
+
+	private bool animationIsRunning = false;
 
 	// Use this for initialization
 	void Start () {
@@ -45,11 +49,21 @@ public class BossBattle : MonoBehaviour {
 			//enquanto espera pelo ataque, segue o Y do player.
 			if(!attacking)
 			{
+				if(!animationIsRunning)
+				{
+					skeletonAnimation.AnimationState.SetAnimation(0,idle,true);
+					animationIsRunning = true;
+				}
 				attackTimer += Time.deltaTime;
 				transform.position = new Vector2(transform.position.x,bearTransform.position.y -1.24f);
 			}
 			else
 			{
+				if(animationIsRunning)
+				{
+					skeletonAnimation.AnimationState.SetAnimation(0,attack,true);
+					animationIsRunning = false;
+				}
 				transform.position += Vector3.left *  (10*Time.deltaTime);
 				if(transform.position.y > bearTransform.position.y)
 				{
@@ -84,12 +98,25 @@ public class BossBattle : MonoBehaviour {
 				gameObject.SetActive(false);
 				GameManager.Instance.isBossAlive = false;
 			}
-			transform.position = initialPosition.position;
-			attacking = false;
-			attackTimer = 0;
-			intro = true;
-			//take damage
 		}
+		if(other.CompareTag("Player"))
+		{
+			IceBehaviour iceToDamage = null;
+			for(int i=0;i<IceController.Instance.iceScripts.Length;i++)
+			{
+				if(IceController.Instance.iceScripts[i] != null)
+				{
+					iceToDamage = IceController.Instance.iceScripts[i];
+					break;
+				}
+			}
+			if(iceToDamage!=null)
+				IceController.Instance.TakeDamageByElement(-30,iceToDamage.MyPosition);
+		}
+		transform.position = initialPosition.position;
+		attacking = false;
+		attackTimer = 0;
+		intro = true;
 	}
 
 	//se o boss acertar o player, dar dano na integridade;
