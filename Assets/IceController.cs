@@ -42,18 +42,20 @@ public class IceController : Singleton<IceController> {
 	}
 
 	public void StartSharkAnim (IcePosition pos) {
-		iceScripts[(int) pos].StartSharkAnimation ();
+		if (iceScripts[(int) pos] != null)
+			iceScripts[(int) pos].StartSharkAnimation ();
 	}
 	public void StopSharkAnim (IcePosition pos) {
-		iceScripts[(int) pos].StopSharkAnimation ();
+		if (iceScripts[(int) pos] != null)
+			iceScripts[(int) pos].StopSharkAnimation ();
 	}
 	private void Update () {
 		if (iceScripts[(int) IcePosition.ICE_CENTER] == null)
 			GameManager.Instance.gameOver = true;
 	}
 
-	public void ImmortalFunction(){
-		StartCoroutine(StartImmortality());
+	public void ImmortalFunction () {
+		StartCoroutine (StartImmortality ());
 	}
 
 	public IEnumerator StartImmortality () {
