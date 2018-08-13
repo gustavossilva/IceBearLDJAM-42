@@ -1,0 +1,321 @@
+{
+"skeleton": { "hash": "Cbnk0qMVFUtU5usNgVnhKzEMIaA", "spine": "3.6.53", "width": 491.86, "height": 217, "images": "./Boss/" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "Agua", "parent": "root", "x": -147.19, "y": 22.47 },
+	{ "name": "Agua 2", "parent": "root", "x": -178.5, "y": -13.31 },
+	{ "name": "Agua 3", "parent": "root", "x": 225.66, "y": 26.94 },
+	{ "name": "Corpo", "parent": "root", "x": -1.29, "y": 57.13 },
+	{ "name": "Barbatana", "parent": "Corpo", "length": 66.81, "rotation": 43.98, "x": 88.88, "y": 31.3 },
+	{ "name": "oloho", "parent": "Corpo", "x": -65.4, "y": 45.28 }
+],
+"slots": [
+	{ "name": "Camada 1 copiar", "bone": "Agua", "attachment": "Camada 1 copiar" },
+	{ "name": "Camada 1 copiar 2", "bone": "Agua 3", "attachment": "Camada 1 copiar 2" },
+	{ "name": "barbatana", "bone": "Barbatana", "attachment": "barbatana" },
+	{ "name": "barbatana copiar", "bone": "Corpo" },
+	{ "name": "agua", "bone": "root" },
+	{ "name": "agua copiar", "bone": "root" },
+	{ "name": "agua copiar 2", "bone": "root" },
+	{ "name": "Camada 1", "bone": "Agua 2", "attachment": "Camada 1" },
+	{ "name": "corpo", "bone": "Corpo", "attachment": "corpo" },
+	{ "name": "olho", "bone": "oloho", "attachment": "olho" }
+],
+"skins": {
+	"default": {
+		"Camada 1": {
+			"Camada 1": { "x": 80.39, "y": 12.94, "width": 252, "height": 45 }
+		},
+		"Camada 1 copiar": {
+			"Camada 1 copiar": { "x": 25.63, "y": 3.61, "width": 114, "height": 68 }
+		},
+		"Camada 1 copiar 2": {
+			"Camada 1 copiar 2": { "x": -14.91, "y": -0.81, "width": 114, "height": 68 }
+		},
+		"agua": {
+			"agua": { "x": 0.94, "y": 33.53, "width": 269, "height": 60 }
+		},
+		"agua copiar": {
+			"agua copiar": { "x": 15.44, "y": 28.95, "width": 290, "height": 42 }
+		},
+		"agua copiar 2": {
+			"agua copiar 2": { "x": -1.56, "y": 28.91, "width": 250, "height": 44 }
+		},
+		"barbatana": {
+			"barbatana": { "x": 34.8, "y": -8.29, "rotation": -43.98, "width": 191, "height": 143 }
+		},
+		"barbatana copiar": {
+			"barbatana copiar": { "x": 44.23, "y": 61.77, "width": 325, "height": 223 }
+		},
+		"corpo": {
+			"corpo": {
+				"type": "mesh",
+				"uvs": [ 0, 0.09718, 0.00242, 7.0E-5, 0.24225, 0, 0.44175, 0.0634, 0.73065, 0.26607, 1, 0.80018, 1, 0.87829, 0.89962, 0.96907, 0.65433, 1, 0.41014, 1, 0.1932, 0.90362, 0, 0.46663, 0.16485, 0.24918, 0.22917, 0.53418, 0.31093, 0.65029 ],
+				"triangles": [ 5, 7, 8, 14, 8, 9, 9, 10, 14, 6, 7, 5, 10, 13, 14, 10, 11, 13, 5, 8, 14, 14, 4, 5, 14, 13, 4, 11, 12, 13, 13, 3, 4, 13, 12, 3, 11, 0, 12, 2, 12, 1, 12, 2, 3, 1, 12, 0 ],
+				"vertices": [ -169.27, 118.64, -168.38, 136.99, -80.6, 137, -7.59, 125.02, 98.15, 86.72, 196.73, -14.23, 196.73, -28.99, 159.99, -46.15, 70.22, -52, -19.16, -52, -98.56, -33.78, -169.27, 48.81, -108.93, 89.91, -85.39, 36.04, -55.47, 14.1 ],
+				"hull": 12,
+				"edges": [ 0, 2, 2, 4, 4, 6, 6, 8, 8, 10, 10, 12, 12, 14, 14, 16, 16, 18, 18, 20, 20, 22, 0, 22, 2, 24, 24, 26, 26, 28, 28, 18 ],
+				"width": 366,
+				"height": 189
+			}
+		},
+		"olho": {
+			"olho": { "x": 1.14, "y": -0.27, "width": 20, "height": 20 }
+		}
+	}
+},
+"animations": {
+	"Ataque": {
+		"slots": {
+			"Camada 1": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"Camada 1 copiar": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"Camada 1 copiar 2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"agua": {
+				"attachment": [
+					{ "time": 0, "name": "agua" },
+					{ "time": 0.1, "name": "agua" },
+					{ "time": 0.2, "name": null }
+				]
+			},
+			"agua copiar": {
+				"attachment": [
+					{ "time": 0, "name": "agua copiar" },
+					{ "time": 0.1, "name": null },
+					{ "time": 0.3333, "name": "agua copiar" }
+				]
+			},
+			"agua copiar 2": {
+				"attachment": [
+					{ "time": 0.2, "name": "agua copiar 2" }
+				]
+			},
+			"barbatana": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"barbatana copiar": {
+				"attachment": [
+					{ "time": 0, "name": "barbatana copiar" }
+				]
+			},
+			"corpo": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"olho": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			}
+		}
+	},
+	"Hit": {
+		"slots": {
+			"Camada 1": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"Camada 1 copiar": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"Camada 1 copiar 2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"agua": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"agua copiar": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"barbatana": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"barbatana copiar": {
+				"attachment": [
+					{ "time": 0, "name": "barbatana copiar" }
+				]
+			},
+			"corpo": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"olho": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			}
+		},
+		"bones": {
+			"root": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.1, "x": -17.5, "y": -10.45 },
+					{ "time": 0.1667, "x": -29.17, "y": 0 },
+					{ "time": 0.2667, "x": 9.79, "y": -13.93 },
+					{ "time": 0.3333, "x": 35.76, "y": 0 }
+				]
+			}
+		}
+	},
+	"Iddle_wait": {
+		"slots": {
+			"Camada 1": {
+				"color": [
+					{ "time": 0.8333, "color": "ffffffff" },
+					{ "time": 1.1667, "color": "ffffff00" }
+				]
+			},
+			"Camada 1 copiar": {
+				"color": [
+					{ "time": 0.8333, "color": "ffffffff" },
+					{ "time": 1.1667, "color": "ffffff00" }
+				]
+			},
+			"Camada 1 copiar 2": {
+				"color": [
+					{ "time": 0.8333, "color": "ffffffff" },
+					{ "time": 1.1667, "color": "ffffff00" }
+				]
+			},
+			"olho": {
+				"attachment": [
+					{ "time": 0, "name": "olho" },
+					{ "time": 0.5, "name": null },
+					{ "time": 0.5667, "name": "olho" }
+				]
+			}
+		},
+		"bones": {
+			"Agua": {
+				"translate": [
+					{ "time": 0, "x": 151.61, "y": 0 },
+					{ "time": 1, "x": -35.54, "y": -11.82 }
+				],
+				"scale": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 1, "x": 1, "y": 1 }
+				]
+			},
+			"Agua 3": {
+				"translate": [
+					{ "time": 0, "x": -216.09, "y": 0 },
+					{ "time": 1.1667, "x": 67.52, "y": -7.27 }
+				],
+				"scale": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 1.1667, "x": 1, "y": 1 }
+				]
+			},
+			"Agua 2": {
+				"translate": [
+					{ "time": 0, "x": 168.76, "y": 41.16 },
+					{ "time": 1, "x": -62.2, "y": -16.34 }
+				],
+				"scale": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 1, "x": 1, "y": 1 }
+				]
+			},
+			"Corpo": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.6667, "x": 0, "y": -8.87 },
+					{ "time": 1.1667, "x": 0, "y": 0 }
+				]
+			},
+			"Barbatana": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.6667, "angle": -6.86 },
+					{ "time": 1.1667, "angle": 0 }
+				]
+			}
+		}
+	},
+	"Mergulhar": {
+		"slots": {
+			"Camada 1": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"Camada 1 copiar": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"Camada 1 copiar 2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"barbatana": {
+				"attachment": [
+					{ "time": 0, "name": "barbatana" },
+					{ "time": 0.1, "name": null }
+				]
+			},
+			"barbatana copiar": {
+				"attachment": [
+					{ "time": 0.1333, "name": "barbatana copiar" }
+				]
+			},
+			"corpo": {
+				"attachment": [
+					{ "time": 0.1, "name": null }
+				]
+			},
+			"olho": {
+				"attachment": [
+					{ "time": 0, "name": "olho" },
+					{ "time": 0.1, "name": null }
+				]
+			}
+		},
+		"bones": {
+			"Corpo": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.0667, "angle": 6.94 },
+					{ "time": 0.1333, "angle": 0 }
+				]
+			}
+		},
+		"deform": {
+			"default": {
+				"corpo": {
+					"corpo": [
+						{ "time": 0 }
+					]
+				}
+			}
+		}
+	}
+}
+}

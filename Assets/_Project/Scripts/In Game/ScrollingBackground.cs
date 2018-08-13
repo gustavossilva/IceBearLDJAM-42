@@ -37,6 +37,7 @@ public class ScrollingBackground : MonoBehaviour {
 		}
 		if(map == 5 && GameManager.Instance.isBossAlive)
 		{
+			GameManager.Instance.startBossBatle = true;
 			speed = 0; //boss fight
 		}
 		else if(map == 5 && !GameManager.Instance.isBossAlive)

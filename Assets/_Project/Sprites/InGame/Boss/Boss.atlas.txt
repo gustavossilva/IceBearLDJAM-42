@@ -1,0 +1,76 @@
+
+Boss.png
+size: 2048,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Camada 1
+  rotate: false
+  xy: 884, 148
+  size: 250, 43
+  orig: 252, 45
+  offset: 1, 1
+  index: -1
+Camada 1 copiar
+  rotate: false
+  xy: 693, 42
+  size: 112, 66
+  orig: 114, 68
+  offset: 1, 1
+  index: -1
+Camada 1 copiar 2
+  rotate: false
+  xy: 1403, 185
+  size: 112, 66
+  orig: 114, 68
+  offset: 1, 1
+  index: -1
+agua
+  rotate: false
+  xy: 884, 193
+  size: 267, 58
+  orig: 269, 60
+  offset: 1, 1
+  index: -1
+agua copiar
+  rotate: false
+  xy: 2, 22
+  size: 288, 40
+  orig: 290, 42
+  offset: 1, 1
+  index: -1
+agua copiar 2
+  rotate: false
+  xy: 1153, 209
+  size: 248, 42
+  orig: 250, 44
+  offset: 1, 1
+  index: -1
+barbatana
+  rotate: false
+  xy: 693, 110
+  size: 189, 141
+  orig: 191, 143
+  offset: 1, 1
+  index: -1
+barbatana copiar
+  rotate: false
+  xy: 368, 30
+  size: 323, 221
+  orig: 325, 223
+  offset: 1, 1
+  index: -1
+corpo
+  rotate: false
+  xy: 2, 64
+  size: 364, 187
+  orig: 366, 189
+  offset: 1, 1
+  index: -1
+olho
+  rotate: false
+  xy: 2, 2
+  size: 18, 18
+  orig: 20, 20
+  offset: 1, 1
+  index: -1
