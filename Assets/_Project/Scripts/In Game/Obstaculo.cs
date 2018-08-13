@@ -14,7 +14,7 @@ public class Obstaculo : MonoBehaviour {
 	[SerializeField] private float _speed;
 
     private float index;
-	[SerializeField] float omegaY = 5.0f;
+	float omegaY;
 
 
 	/// <summary> Deve ser setada de acordo com a speed do urso </summary>
@@ -30,6 +30,12 @@ public class Obstaculo : MonoBehaviour {
 		speed = 1f;		// 1m/s inicialmente
 	}
 
+
+	void OnEnable()
+	{
+		omegaY = Random.Range(.05f, 1.5f);
+		GetComponent<Collider2D>().enabled = true;
+	}
 
 	void FixedUpdate()
 	{
@@ -58,7 +64,7 @@ public class Obstaculo : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
-		if(collider.CompareTag("Player") && IceController.Instance.canHit)
+		if(collider.CompareTag("Player"))
 		{
 			print("obstaculo colidiu");
 			IcePosition pos = collider.GetComponent<IceBehaviour>().MyPosition;
