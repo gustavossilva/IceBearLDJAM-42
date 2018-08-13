@@ -35,15 +35,17 @@ public class IceController : Singleton<IceController> {
 	}
 
 	public void TakeDamageByElement (int damage, IcePosition position) {
-		iceScripts[(int) position].TakeDamage (damage);
+		if (iceScripts != null) {
+			iceScripts[(int) position].TakeDamage (damage);
+		}
 		//Disparar animação necessária;
 	}
 
-	public void StartSharkAnim (IcePosition pos){
-		iceScripts[(int)pos].StartSharkAnimation();
+	public void StartSharkAnim (IcePosition pos) {
+		iceScripts[(int) pos].StartSharkAnimation ();
 	}
-	public void StopSharkAnim (IcePosition pos){
-		iceScripts[(int)pos].StopSharkAnimation();
+	public void StopSharkAnim (IcePosition pos) {
+		iceScripts[(int) pos].StopSharkAnimation ();
 	}
 
 	IEnumerator StartImmortality () {
@@ -59,13 +61,13 @@ public class IceController : Singleton<IceController> {
 	//Função responsável por desabilitar e habilitar os colisores dos gelos
 	private void ChangeIceCollidersState () {
 		for (int i = 0; i < iceList.Length; i++) {
-			if (iceList[i] != null) {
-					if(iceList[i].enabled){
-						iceScripts[i].StartImmortalState();
-					}else{
-						iceScripts[i].StopImmortalState();
-					}
-					iceList[i].enabled = !iceList[i].enabled;
+			if (iceScripts[i] != null) {
+				if (iceList[i].enabled) {
+					iceScripts[i].StartImmortalState ();
+				} else {
+					iceScripts[i].StopImmortalState ();
+				}
+				iceList[i].enabled = !iceList[i].enabled;
 			}
 		}
 	}
