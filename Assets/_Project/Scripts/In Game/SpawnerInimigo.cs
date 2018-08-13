@@ -15,6 +15,8 @@ public class SpawnerInimigo : MonoBehaviour {
 	private Vector2 minPos;
 	private Vector2 maxPos;
 
+	public static Dictionary<IcePosition, Tubarao> dic;
+
 	// Use this for initialization
 	void Awake ()
 	{
@@ -22,22 +24,26 @@ public class SpawnerInimigo : MonoBehaviour {
 		currentTime = 0f;
 		urso = GameObject.Find("Spine GameObject (URSO)").transform;	
 
+		dic = new Dictionary<IcePosition, Tubarao>();
+
 		minPos = transform.TransformPoint(minTransformPos.position);
 		maxPos = transform.TransformPoint(maxTransformPos.position);
 	}
 	
 	void Update () 
 	{
-		currentTime += Time.deltaTime;
-
-		if(currentTime >= spawnTime)
+		// Only counts time when there is an available space to chew
+		if(dic.Count < 4)
 		{
-			currentTime = 0f;
-			Spawn();
-
-			// fazer com que quando o inimigo morrer, ele avisar q morreu pro spawner spawnar outro inimigo, depois de um delay aleatorio
-		
+			currentTime += Time.deltaTime;
 			
+			if(currentTime >= spawnTime)
+			{
+				currentTime = 0f;
+				Spawn();
+
+				// fazer com que quando o inimigo morrer, ele avisar q morreu pro spawner spawnar outro inimigo, depois de um delay aleatorio
+			}
 		}
 	}
 

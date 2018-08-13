@@ -19,6 +19,7 @@ public class Tubarao : Enemy {
 	public float chewingTime = 3f;
 	public bool isAlive = false;
 
+	IcePosition position;
 
 	protected override void Awake()
 	{
@@ -144,10 +145,16 @@ public class Tubarao : Enemy {
 	public IcePosition Attack()
 	{
 		isAlive = true;
-		IcePosition position = (IcePosition)Random.Range(0, 4);
-		
-		IceController.Instance.StartSharkAnim(position);
+		position = (IcePosition)Random.Range(0, 4);
 
+		while(SpawnerInimigo.dic.ContainsKey(position))
+		{
+			position = (IcePosition)Random.Range(0, 4);
+		}
+
+		SpawnerInimigo.dic.Add(position, this);
+		IceController.Instance.StartSharkAnim(position);
+		
 		return position;
 	}
 

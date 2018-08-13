@@ -99,7 +99,7 @@ public class ElipticalMovement : MonoBehaviour {
 
 		float currentChewingTime = 0f;
 
-		while(currentChewingTime <= tubarao.chewingTime)
+		while(tubarao.isAlive)
 		{
 			currentChewingTime += Time.deltaTime;
 			// Apply damage to the platform
@@ -107,11 +107,8 @@ public class ElipticalMovement : MonoBehaviour {
 			yield return null;
 		}
 
-		// If the player has not killed the shark yet, e.g. it is still alive
-		if(tubarao.isAlive)
-		{
-			IceController.Instance.StopSharkAnim(position);
-			gameObject.SetActive(false);
-		}
+		IceController.Instance.StopSharkAnim(position);
+		gameObject.SetActive(false);
+
  	}
 }

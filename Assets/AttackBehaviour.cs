@@ -9,6 +9,8 @@ public class AttackBehaviour : MonoBehaviour {
 	public Spine.TrackEntry trackEntry;
 	public bool trackClear = true;
 
+	private IcePosition icePosition;
+
 	void Start()
 	{
 		// trackEntry.End += OnEnd;
@@ -21,6 +23,7 @@ public class AttackBehaviour : MonoBehaviour {
 			trackClear = false;
 			trackEntry = _skeletonAnimation.state.SetAnimation(2, attack_right, false);
 			// trackEntry.End += OnEnd;
+			icePosition = IcePosition.ICE_RIGHT;
 			trackEntry.Complete += OnComplete;
 			_skeletonAnimation.state.AddEmptyAnimation(0, .3f, .6f);
 		}
@@ -31,6 +34,7 @@ public class AttackBehaviour : MonoBehaviour {
 			_skeletonAnimation.transform.localScale = new Vector2(-1f, transform.localScale.y);
 			trackEntry = _skeletonAnimation.state.SetAnimation(2, attack_right, false);
 			// trackEntry.End += OnEnd;
+			icePosition = IcePosition.ICE_LEFT;
 			trackEntry.Complete += OnComplete;
 			_skeletonAnimation.state.AddEmptyAnimation(0, .3f, .6f);
 		}
@@ -40,6 +44,7 @@ public class AttackBehaviour : MonoBehaviour {
 			trackClear = false;
 			trackEntry = _skeletonAnimation.state.SetAnimation(2, attack_back, false);
 			// trackEntry.End += OnEnd;
+			icePosition = IcePosition.ICE_BACK;
 			trackEntry.Complete += OnComplete;
 			_skeletonAnimation.state.AddEmptyAnimation(0, .3f, .6f);
 		}
@@ -49,6 +54,7 @@ public class AttackBehaviour : MonoBehaviour {
 			trackClear = false;
 			trackEntry = _skeletonAnimation.state.SetAnimation(2, attack_front, false);
 			// trackEntry.End += OnEnd;
+			icePosition = IcePosition.ICE_FRONT;
 			trackEntry.Complete += OnComplete;
 			_skeletonAnimation.state.AddEmptyAnimation(0, .3f, .6f);
 		}
@@ -69,6 +75,13 @@ public class AttackBehaviour : MonoBehaviour {
 		_skeletonAnimation.transform.localScale = new Vector2(1f, transform.localScale.y);
 		trackClear = true;
 		
+		Tubarao tubarao = null;
+
 		// Kill shark if there is one
+		if(SpawnerInimigo.dic.TryGetValue(icePosition, out tubarao))
+		{
+			tubarao.isAlive = false;
+			SpawnerInimigo.dic.Remove(icePosition);
+		}
 	}
 }
