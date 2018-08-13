@@ -44,7 +44,7 @@ public class GameManager : Singleton<GameManager> {
 			gameOverTimer += Time.deltaTime;
 			if(gameOverTimer > 2 && !winner)
 			{
-				SceneManager.LoadScene("SceneMenu");
+				SceneManager.LoadScene("SceneGameOver");
 			}
 			else if(gameOverTimer > 2 && winner)
 			{

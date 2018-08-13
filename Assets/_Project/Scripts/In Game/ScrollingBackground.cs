@@ -45,7 +45,8 @@ public class ScrollingBackground : MonoBehaviour {
 		if(map == 5 && GameManager.Instance.isBossAlive)
 		{
 			gameMusic.GetComponent<AudioSource>().Stop();
-			bossMusic.GetComponent<AudioSource>().Play();
+			if(!bossMusic.GetComponent<AudioSource>().isPlaying)
+				bossMusic.GetComponent<AudioSource>().Play();
 			GameManager.Instance.startBossBatle = true;
 			speed = 0; //boss fight
 		}

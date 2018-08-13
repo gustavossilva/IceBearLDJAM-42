@@ -180,10 +180,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You did it!\r With your help, father bear and his puppy can fishing again,
-    and they will be happy for the rest of their lives.\r\nThanks for playing our
-    game, we wish you can be happy like the bears of this story. \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPress
-    enter to continue"
+  m_Text: 'The father bear has perish in the journey to find his son, but don''t be
+    sad! Try again!
+
+
+    PRESS ENTER TO CONTINUE'
 --- !u!222 &63924073
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -349,7 +350,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7372217360990c84e84424aee4e7c58c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15d5655771ccda146885e4e9441b4913, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

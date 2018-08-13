@@ -113,10 +113,13 @@ public class BossBattle : MonoBehaviour {
 			if(iceToDamage!=null)
 				IceController.Instance.TakeDamageByElement(-30,iceToDamage.MyPosition);
 		}
-		transform.position = initialPosition.position;
-		attacking = false;
-		attackTimer = 0;
-		intro = true;
+		if(other.CompareTag("Player") || other.CompareTag("Obstacle"))
+		{
+			transform.position = initialPosition.position;
+			attacking = false;
+			attackTimer = 0;
+			intro = true;
+		}
 	}
 
 	//se o boss acertar o player, dar dano na integridade;
