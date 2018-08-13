@@ -34,6 +34,7 @@ public class Obstaculo : MonoBehaviour {
 	void OnEnable()
 	{
 		omegaY = Random.Range(.05f, 1.5f);
+		GetComponent<Collider2D>().enabled = true;
 	}
 
 	void FixedUpdate()
