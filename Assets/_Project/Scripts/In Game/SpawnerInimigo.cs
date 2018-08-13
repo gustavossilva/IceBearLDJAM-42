@@ -46,7 +46,7 @@ public class SpawnerInimigo : MonoBehaviour {
 		// plataformasDisponiveis -> plataformas ainda nao destruidas
 		// dic.Count -> plataformas onde nao ha tubarao
 		// Uma plataformaDisponivel pode conter um tubarao
-		if((plataformasDisponiveis - dic.Count) > 0)
+		if((plataformasDisponiveis - dic.Count) > 0 && GameManager.Instance.map < 5)
 		{
 			currentTime += Time.deltaTime;
 			

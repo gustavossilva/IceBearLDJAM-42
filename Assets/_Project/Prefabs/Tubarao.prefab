@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2D: {fileID: 0}
-  damagePerSecond: 1
+  damagePerSecond: 5
   urso: {fileID: 0}
   velocidadeRodeio: 1
   elipticalMovement: {fileID: 114641692733807902}
