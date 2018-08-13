@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Spine.Unity;
 using UnityEngine;
 public class IceBehaviour : MonoBehaviour {
 
@@ -17,6 +18,8 @@ public class IceBehaviour : MonoBehaviour {
 
 	[SerializeField] IcePosition myPosition;
 
+	[SerializeField] SkeletonAnimation iceSkeleton;
+
 	public IcePosition MyPosition {
 		private set { }
 		get {
@@ -30,6 +33,7 @@ public class IceBehaviour : MonoBehaviour {
 	/// Awake is called when the script instance is being loaded.
 	/// </summary>
 	void Awake () {
+
 		controlRef = IceController.Instance;
 	}
 
@@ -47,6 +51,19 @@ public class IceBehaviour : MonoBehaviour {
 	private void OnTriggerEnter2D (Collider2D other) {
 		if (controlRef.canHit) {
 
+		}
+	}
+
+	public void StartSharkAnimation () {
+		if (iceSkeleton != null) {
+			iceSkeleton.AnimationState.AddAnimation (0, "Saltar", false, 0);
+			iceSkeleton.AnimationState.AddAnimation (0, "Morder", true, 0);
+		}
+	}
+	public void StopSharkAnimation () {
+		if (iceSkeleton != null) {
+			iceSkeleton.AnimationState.AddAnimation (0, "Death", false, 0);
+			iceSkeleton.AnimationState.AddAnimation (0, "Gelo", true, 0);
 		}
 	}
 
