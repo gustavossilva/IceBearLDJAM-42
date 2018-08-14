@@ -1049,8 +1049,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 538, y: -89}
-  m_SizeDelta: {x: -1280.4, y: -863.79}
+  m_AnchoredPosition: {x: 554.3, y: -106.18}
+  m_SizeDelta: {x: -1247.9, y: -794.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &632712251
 MonoBehaviour:
@@ -1084,8 +1084,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The sun and enemies will destroy your ice, and you will be out of space.
-    Recover staying in cold water spots.
+  m_Text: 'The sun and enemies will damage your ice platform, and you may run out
+    of space. Recover it by staying in cold water pools
+
+'
 --- !u!222 &632712252
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1630,7 +1632,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' Back
+  m_Text: 'Close
 
 
 
@@ -2024,11 +2026,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' Back
-
-
-
-'
+  m_Text: Close
 --- !u!222 &1002395146
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2199,7 +2197,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use Arrow keys to attack, each arrow attack a different side
+  m_Text: Use Arrow keys to attack, each key attacks on a different side
 --- !u!222 &1114229471
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2580,8 +2578,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 794, y: -413}
-  m_SizeDelta: {x: 373.6, y: 99.9}
+  m_AnchoredPosition: {x: -0.000030518, y: -416}
+  m_SizeDelta: {x: 154.6, y: 99.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1304037735
 MonoBehaviour:
@@ -2888,7 +2886,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Assistent Programmers
+  m_Text: Assistant Programmers
 --- !u!222 &1470388642
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3522,7 +3520,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Avoid Obstacles and avoid the boss! He will crush his head in the icebergs
+  m_Text: Avoid obstacles and avoid the whale boss! He will crush his head on the
+    icebergs
 --- !u!222 &1896111269
 CanvasRenderer:
   m_ObjectHideFlags: 0

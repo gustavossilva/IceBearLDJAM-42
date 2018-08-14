@@ -180,9 +180,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You did it!\r With your help, father bear and his puppy can go fishing
-    again, and they will be happy for the rest of their lives.\r\nThanks for playing
-    our game, we wish you can be happy like the bears of this story. \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPress
+  m_Text: "You did it!\r With your help, father bear and his son can go fishing again,
+    and they will be happy for the rest of their lives.\r\nThanks for playing our
+    game, we wish you can be happy like the bears of this story. \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPress
     enter to continue"
 --- !u!222 &63924073
 CanvasRenderer:
