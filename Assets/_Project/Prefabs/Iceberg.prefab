@@ -173,6 +173,7 @@ MonoBehaviour:
   dano: 25
   wavy: 1
   _speed: 1
+  iceBreakSound: {fileID: 0}
 --- !u!212 &212141811187332286
 SpriteRenderer:
   m_ObjectHideFlags: 1

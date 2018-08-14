@@ -13,6 +13,8 @@ public class Obstaculo : MonoBehaviour {
 	public bool wavy;
 	[SerializeField] private float _speed;
 
+	public AudioSource iceBreakSound;
+
     private float index;
 	float omegaY;
 
@@ -30,6 +32,14 @@ public class Obstaculo : MonoBehaviour {
 		speed = 1f;		// 1m/s inicialmente
 	}
 
+	/// <summary>
+	/// Start is called on the frame when a script is enabled just before
+	/// any of the Update methods is called the first time.
+	/// </summary>
+
+	/// <summary>
+	/// This function is called when the behaviour becomes disabled or inactive.
+	/// </summary>
 
 	void OnEnable()
 	{
@@ -66,12 +76,15 @@ public class Obstaculo : MonoBehaviour {
 	{
 		if(collider.CompareTag("Player"))
 		{
+			iceBreakSound = GameObject.FindGameObjectWithTag("IceBreakSound").GetComponent<AudioSource>();
+			iceBreakSound.Play();
 			print("obstaculo colidiu");
 			IcePosition pos = collider.GetComponent<IceBehaviour>().MyPosition;
 
 			// Danifica a plataforma
 			IceController.Instance.TakeDamageByElement(-dano, pos);
 			IceController.Instance.ImmortalFunction();
+
 			gameObject.SetActive(false);
 		}
 	}

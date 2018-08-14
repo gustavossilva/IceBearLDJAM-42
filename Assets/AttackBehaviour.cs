@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using Spine.Unity;
 
 public class AttackBehaviour : MonoBehaviour {
@@ -10,6 +11,8 @@ public class AttackBehaviour : MonoBehaviour {
 	public bool trackClear = true;
 
 	private IcePosition icePosition;
+
+	public  AudioSource hitSound;
 
 	void Start()
 	{
@@ -29,6 +32,7 @@ public class AttackBehaviour : MonoBehaviour {
 			// trackEntry.End += OnEnd;
 			icePosition = IcePosition.ICE_RIGHT;
 			trackEntry.Complete += OnComplete;
+			StartCoroutine(PlayHitSound());
 			_skeletonAnimation.state.AddEmptyAnimation(2, 0.2f, _skeletonAnimation.state.GetCurrent(2).AnimationTime+1f);
 		}
 
@@ -40,6 +44,7 @@ public class AttackBehaviour : MonoBehaviour {
 			trackEntry = _skeletonAnimation.state.SetAnimation(2, attack_right, false);
 			// trackEntry.End += OnEnd;
 			icePosition = IcePosition.ICE_LEFT;
+			StartCoroutine(PlayHitSound());
 			trackEntry = _skeletonAnimation.state.AddEmptyAnimation(2, 0.2f, _skeletonAnimation.state.GetCurrent(2).AnimationTime+1f);
 			trackEntry.Complete += OnLeftComplete;
 		}
@@ -52,6 +57,7 @@ public class AttackBehaviour : MonoBehaviour {
 			trackEntry.mixDuration = 0f;
 			// trackEntry.End += OnEnd;
 			icePosition = IcePosition.ICE_BACK;
+			StartCoroutine(PlayHitSound());
 			trackEntry.Complete += OnComplete;
 			_skeletonAnimation.state.AddEmptyAnimation(2, 0.2f, _skeletonAnimation.state.GetCurrent(2).AnimationTime+1f);
 		}
@@ -64,6 +70,7 @@ public class AttackBehaviour : MonoBehaviour {
 			trackEntry.mixDuration = 0f;
 			// trackEntry.End += OnEnd;
 			icePosition = IcePosition.ICE_FRONT;
+			StartCoroutine(PlayHitSound());
 			trackEntry.Complete += OnComplete;
 			_skeletonAnimation.state.AddEmptyAnimation(2, 0.2f, _skeletonAnimation.state.GetCurrent(2).AnimationTime+1f);
 		}
@@ -111,4 +118,9 @@ public class AttackBehaviour : MonoBehaviour {
 		}
 		PlayerManager.Instance.attacking = false;
 	}
+	private IEnumerator PlayHitSound(){
+		yield return new WaitForSeconds(0.5f);
+		hitSound.Play();
+	}
+	
 }

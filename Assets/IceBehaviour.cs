@@ -7,7 +7,7 @@ public class IceBehaviour : MonoBehaviour {
 
 	IceController controlRef;
 
-	[SerializeField] private int life = 400;
+	[SerializeField] private int life = 300;
 
 	public int Life {
 		private set { }
@@ -37,7 +37,7 @@ public class IceBehaviour : MonoBehaviour {
 	}
 
 	private void Start () {
-		this.life = 400;
+		this.life = 300;
 		StartCoroutine (SunBurn ());
 	}
 
