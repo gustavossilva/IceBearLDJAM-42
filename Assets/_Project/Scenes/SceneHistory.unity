@@ -254,7 +254,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'And the last thing he saw was their son
+  m_Text: 'And the last thing he saw was his son
 
 
     Press Enter to Continue.
@@ -414,8 +414,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "A long long time has passed and he woke up dizzy and scared, too far away
-    from home. When he recovered from the shock, he thinks:\r\n\r\n\"I need to go
+  m_Text: "A long, long time has passed and he woke up dizzy and scared, too far away
+    from home. When he recovered from the shock, he thought:\r\n\r\n\"I need to go
     back to my son\"\r\n\r\nAnd that's how your adventure begins.\r                                \t\t\t\tPRESS
     ENTER TO CONTINUE\n"
 --- !u!222 &394614788
@@ -491,8 +491,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "The father bear fall out of the cliff \n\nPress Enter to Continue.\nPress
-    Q To Skip."
+  m_Text: 'The father bear fell off the cliff
+
+
+    Press Enter to Continue.
+
+    Press Q To Skip.'
 --- !u!222 &399662181
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -567,7 +571,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'One sunny day, a father bear and his son decided to go fishing, they grab
-    some snacks and their fishing rods ready for some fun.
+    some snacks and their fishing rods. Ready for some fun!
 
 
     Press Enter to Continue.
@@ -1037,7 +1041,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'The place where they were sitting broke.
+  m_Text: 'The place they were sitting broke apart.
 
 
     Press Enter to Continue.
@@ -1702,7 +1706,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'on the distance.
+  m_Text: 'at the distance.
 
 
     Press Enter to Continue.
@@ -2003,7 +2007,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Please, player, help the bear father get to his puppy, you are his only
+  m_Text: Please, player, help the father bear get to his puppy, you are his only
     hope.
 --- !u!222 &1986007680
 CanvasRenderer:
@@ -2078,7 +2082,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Out of nowhere, the ice started cracking and moving.
+  m_Text: 'Suddenly, the ice started cracking and moving.
 
 
     Press Enter to Continue.
@@ -2157,8 +2161,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'He landed on a pice of ice that let go and drifeted away from his home
-    and his son.
+  m_Text: 'He landed on a piece of ice that broke apart and drifted away from his
+    home and his son.
 
 
     Press Enter to Continue.
