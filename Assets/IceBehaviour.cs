@@ -7,7 +7,7 @@ public class IceBehaviour : MonoBehaviour {
 
 	IceController controlRef;
 
-	[SerializeField] private int life = 300;
+	[SerializeField] private int life = 200;
 
 	public int Life {
 		private set { }
@@ -37,7 +37,7 @@ public class IceBehaviour : MonoBehaviour {
 	}
 
 	private void Start () {
-		this.life = 300;
+		this.life = 200;
 		StartCoroutine (SunBurn ());
 	}
 
@@ -93,10 +93,12 @@ public class IceBehaviour : MonoBehaviour {
 	private IEnumerator SunBurn () {
 		while (this.life > 0) {
 			yield return new WaitForSeconds (1);
-			if (controlRef.coldWater) {
-				TakeDamage (controlRef.coldWaterHeal);
-			} else {
-				TakeDamage (-controlRef.sunDamage);
+			if (GameManager.Instance.isBossAlive) {
+				if (controlRef.coldWater) {
+					TakeDamage (controlRef.coldWaterHeal);
+				} else {
+					TakeDamage (-controlRef.sunDamage);
+				}
 			}
 		}
 	}

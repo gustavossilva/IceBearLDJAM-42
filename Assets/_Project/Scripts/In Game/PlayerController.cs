@@ -48,6 +48,10 @@ public class PlayerController : MonoBehaviour {
 	
 	void Update () 
 	{
+		if(Time.timeScale == 0)
+		{
+			return;
+		}
 		if(GameManager.Instance.gameOver)
 		{
 			if(!isGameOver && !GameManager.Instance.winner)
